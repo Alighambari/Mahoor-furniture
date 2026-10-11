@@ -46,12 +46,7 @@
 
   isolation: isolate;
 
-  /* background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(200,169,126,.09),
-            transparent 42%
-        ), */
+
   background:
     radial-gradient(
       circle at 50% 0%,

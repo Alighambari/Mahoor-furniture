@@ -708,7 +708,7 @@
     background: linear-gradient(
       to bottom,
       transparent 0%,
-      var(--hero-accent) 50%,
+      var(--color-accent-light) 50%,
       transparent 100%
     );
 

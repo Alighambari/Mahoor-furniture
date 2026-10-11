@@ -405,49 +405,38 @@
 
 .about-philosophy {
   display: grid;
-
   grid-template-columns: repeat(4, minmax(0, 1fr));
-
   gap: 28px;
-
   margin-top: 120px;
-
   padding-top: 28px;
-
-  border-top: 1px solid rgba(245, 242, 235, 0.09);
+  border-top: 1.5px solid var(--color-border-accent);;
 }
 
 .about-philosophy__item {
+
   display: grid;
-
   grid-template-columns: auto 1fr;
-
   gap: 18px;
-
   min-height: 145px;
-
   position: relative;
-
   padding-top: 5px;
-
   transition: transform 0.7s var(--ease-cinematic);
+
 }
+
+
 .about-philosophy__item:hover {
   transform: translateY(-6px);
 }
 
 .about-philosophy__item:not(:last-child)::after {
   content: "";
-
   position: absolute;
-
   top: 4px;
   bottom: 4px;
   left: -14px;
-
   width: 1px;
-
-background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126, 0.65) 75%, transparent);
+  background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126, 0.65) 75%, transparent);
 }
 
 /* =========================================================
@@ -456,13 +445,9 @@ background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126
 
 .about-philosophy__number {
   color: rgba(200, 169, 126, 0.55);
-
   font-family: Arial, sans-serif;
-
   font-size: 8px;
-
   letter-spacing: 2px;
-
   direction: ltr;
 }
 
@@ -472,35 +457,22 @@ background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126
 
 .about-philosophy__title {
   display: block;
-
   margin-bottom: 15px;
-
   color: var(--color-cream);
-
   font-family: Arial, sans-serif;
-
   font-size: 9px;
-
   letter-spacing: 3px;
-
   direction: ltr;
-
   transition: color 0.4s ease;
 }
 
 .about-philosophy__title::after {
   content: "";
-
   display: block;
-
   width: 0;
-
   height: 1px;
-
   margin-top: 10px;
-
   background: linear-gradient(90deg, var(--color-accent), transparent);
-
   transition: width 0.6s var(--ease-cinematic);
 }
 
@@ -512,21 +484,14 @@ background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126
   color: var(--color-accent);
 }
 
-/* =========================================================
-   PHILOSOPHY TEXT
-   ========================================================= */
+
 
 .about-philosophy__item p {
   max-width: 190px;
-
   margin: 0;
-
   color: rgba(245, 242, 235, 0.34);
-
   font-size: 11px;
-
   line-height: 2;
-
   transition: color 0.4s ease;
 }
 
@@ -545,8 +510,7 @@ background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126
   align-items: center;
   justify-content: center;
   gap: 25px;
-  margin-top: 50px;
-  padding-bottom: 80px;
+    padding-bottom: 80px;
 }
 
 .about-closing__line {
@@ -769,6 +733,7 @@ background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126
     margin-top: 90px;
     padding-top: 0;
     border-top: 0;
+    
   }
 
   .about-philosophy__item {
@@ -792,6 +757,7 @@ background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126
     gap: 18px;
     margin-top: 100px;
     padding-bottom: 30px;
+    background:  var(--topbar-panel);;
   }
 
   .about-closing__line {
