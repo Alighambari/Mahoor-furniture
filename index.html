@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAHOOR | مبلمان و طراحی داخلی</title>
+    <meta
+      name="description"
+      content="MAHOOR؛ مجموعه‌ای از مبلمان و طراحی داخلی با تمرکز بر زیبایی، کیفیت و جزئیات."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/topbar.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/why-us.css" />
+    <link rel="stylesheet" href="css/collections.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/about.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/scrollbar.css" />
+    <link rel="stylesheet" href="css/light-mode.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- BRAND INTRO SEQUENCER -->
+    <div class="brand-intro" id="brandIntro">
+      <div class="intro-content">
+        <span class="brand-sub">ماهور</span>
+        <h2 class="brand-title">LUXURY FURNITURE</h2>
+      </div>
+    </div>
+
+    <!-- MAHOOR TOP BAR -->
+
+    <header class="mahoor-topbar" id="mahoorTopbar">
+      <div class="topbar-inner">
+        <a href="#home" class="topbar-logo">
+          <span class="topbar-logo__name"> MAHOOR </span>
+
+          <span class="topbar-logo__sub"> INTERIOR </span>
+        </a>
+        <nav class="topbar-nav" aria-label="منوی اصلی">
+          <a href="#home" class="topbar-link"> خانه </a>
+
+          <a href="#packets" class="topbar-link"> مجموعه‌ها </a>
+
+          <a href="products.html" class="topbar-link"> محصولات </a>
+
+          <a href="#about" class="topbar-link"> درباره ما </a>
+
+          <a href="#contact" class="topbar-link"> تماس </a>
+        </nav>
+
+        <div class="topbar-actions">
+          <!-- SEARCH -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-search"
+            aria-label="جستجو"
+            aria-expanded="false"
+          >
+            <svg
+              class="topbar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle
+                cx="10.8"
+                cy="10.8"
+                r="6.3"
+                stroke="currentColor"
+                stroke-width="1.35"
+              />
+
+              <path
+                d="M15.5 15.5L20 20"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+
+          <!-- WISHLIST -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-favorite"
+            aria-label="علاقه‌مندی‌ها"
+          >
+            <svg
+              class="topbar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M20.8 8.6
+                           C20.8 5.7 18.7 3.5 15.9 3.5
+                           C14.3 3.5 12.8 4.3 12 5.6
+                           C11.2 4.3 9.7 3.5 8.1 3.5
+                           C5.3 3.5 3.2 5.7 3.2 8.6
+                           C3.2 13.2 7.4 16.5 12 20.3
+                           C16.6 16.5 20.8 13.2 20.8 8.6Z"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span class="topbar-badge"> 0 </span>
+          </button>
+
+          <!-- SHOPPING BAG -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-bag"
+            aria-label="سبد خرید"
+          >
+            <svg
+              class="topbar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 8.5H19L18 20H6L5 8.5Z"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linejoin="round"
+              />
+
+              <path
+                d="M9 9V6.5C9 4.84 10.34 3.5 12 3.5C13.66 3.5 15 4.84 15 6.5V9"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <span class="topbar-badge"> 0 </span>
+          </button>
+
+          <!-- THEME TOGGLE -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-theme-toggle"
+            id="themeToggle"
+            aria-label="تغییر حالت رنگ"
+            aria-pressed="false"
+          >
+            <svg
+              class="mahoor-orbit"
+              viewBox="0 0 32 32"
+              fill="none"
+              aria-hidden="true"
+            >
+              <!-- Outer architectural orbit -->
+              <circle class="orbit-ring" cx="16" cy="16" r="9.5" />
+
+              <!-- Inner core -->
+              <circle class="orbit-core" cx="16" cy="16" r="4" />
+
+              <!-- Orbit particle -->
+              <circle class="orbit-particle" cx="16" cy="6.5" r="1.15" />
+
+              <!-- Light rays -->
+              <g class="orbit-rays">
+                <line x1="16" y1="2.5" x2="16" y2="4.2" />
+                <line x1="16" y1="27.8" x2="16" y2="29.5" />
+
+                <line x1="2.5" y1="16" x2="4.2" y2="16" />
+                <line x1="27.8" y1="16" x2="29.5" y2="16" />
+
+                <line x1="6.45" y1="6.45" x2="7.65" y2="7.65" />
+                <line x1="24.35" y1="24.35" x2="25.55" y2="25.55" />
+
+                <line x1="24.35" y1="7.65" x2="25.55" y2="6.45" />
+                <line x1="6.45" y1="25.55" x2="7.65" y2="24.35" />
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <button
+          type="button"
+          class="topbar-menu-toggle"
+          id="mahoorMenuToggle"
+          aria-label="باز کردن منو"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div class="topbar-search-panel" id="topbarSearchPanel">
+        <div class="topbar-search-inner">
+          <span class="topbar-search-label"> SEARCH </span>
+
+          <input
+            type="search"
+            id="topbarSearchInput"
+            placeholder="جستجوی محصول..."
+            aria-label="جستجوی محصول"
+          />
+
+          <button
+            type="button"
+            class="topbar-search-close"
+            aria-label="بستن جستجو"
+          >
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M6 6L18 18"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M18 6L6 18"
+                stroke="currentColor"
+                stroke-width="1.3"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="topbar-mobile-menu" id="mahoorMobileMenu">
+        <nav class="topbar-mobile-nav" aria-label="منوی موبایل">
+          <a href="#home">
+            <span class="mobile-link-number">01</span>
+            <span>خانه</span>
+          </a>
+
+          <a href="#packets">
+            <span class="mobile-link-number">02</span>
+            <span>مجموعه‌ها</span>
+          </a>
+
+          <a href="products.html">
+            <span class="mobile-link-number">03</span>
+            <span>محصولات</span>
+          </a>
+
+          <a href="#about">
+            <span class="mobile-link-number">04</span>
+            <span>درباره ما</span>
+          </a>
+
+          <a href="#contact">
+            <span class="mobile-link-number">05</span>
+            <span>تماس</span>
+          </a>
+        </nav>
+
+        <div class="topbar-mobile-footer">
+          <span> MAHOOR </span>
+
+          <span> INTERIOR </span>
+        </div>
+      </div>
+    </header>
+
+    <!--first-page (Hero Section)-->
+
+
+
+    <!-- =========================================
+     HERO SECTION
+========================================= -->
+<section class="hero" id="heroStage" aria-labelledby="heroTitle" tabindex="0">
+
+  <!-- Hero Media -->
+  <div class="hero__media" id="heroCarousel">
+
+    <div class="hero__track">
+
+      <!-- Slide 01 -->
+      <div
+        class="hero__slide is-active"
+        data-index="0"
+        aria-hidden="false"
+      >
+        <img
+          src="./photo/hero1.webp"
+          alt="فضای داخلی لوکس و مبلمان ماهور"
+          class="hero__image"
+            fetchpriority="high"
+             decoding="async"
+        />
+      </div>
+
+      <!-- Slide 02 -->
+      <div
+        class="hero__slide"
+        data-index="1"
+        aria-hidden="true"
+      >
+        <img
+          src="./photo/hero2.webp"
+          alt="طراحی داخلی مدرن ماهور"
+          class="hero__image"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Slide 03 -->
+      <div
+        class="hero__slide"
+        data-index="2"
+        aria-hidden="true"
+      >
+        <img
+          src="./photo/hero3.webp"
+          alt="فضای مبلمان و دکوراسیون ماهور"
+          class="hero__image"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Subtle visual overlay -->
+  <div
+    class="hero__overlay"
+    aria-hidden="true"
+  ></div>
+
+
+  <!-- Hero Content -->
+  <div class="hero__container">
+
+    <div class="hero__content">
+
+      <!-- Brand -->
+      <div class="hero__brand">
+        <span class="hero__brand-name">MAHOOR</span>
+        <span class="hero__brand-line"></span>
+        <span class="hero__brand-category">
+          INTERIOR / FURNITURE
+        </span>
+      </div>
+
+
+      <!-- Main Heading -->
+      <h1 class="hero__title" id="heroTitle">
+
+        <span class="hero__title-line">
+          فضایی برای
+        </span>
+
+        <span class="hero__title-accent">
+          زندگی
+        </span>
+
+      </h1>
+
+
+      <!-- Description -->
+      <p class="hero__description">
+        طراحی، کیفیت و جزئیات؛
+        برای ساختن فضایی که متعلق به شماست.
+      </p>
+
+
+      <!-- CTA -->
+ <a href="products.html" class="hero__cta" aria-label="مشاهده مجموعه محصولات ماهور">
+  <span class="hero__cta-text">مشاهده مجموعه</span>
+  <span class="hero__cta-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+      <path d="M5 12H19M19 12L13 6M19 12L13 18"
+            stroke="currentColor" stroke-width="1.4"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </span>
+</a>
+
+    </div>
+
+
+
+
+
+  <!-- Carousel Controls -->
+  <div
+    class="hero__controls"
+    aria-label="کنترل تصاویر Hero"
+  >
+
+      <button
+      type="button"
+      class="hero__control hero__control--next"
+      aria-label="تصویر بعدی"
+      data-hero-control="next"
+    >
+     <svg
+    class="hero__control-icon"
+    viewBox="0 0 32 32"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <circle cx="4.5" cy="16" r="0.9" fill="currentColor" />
+    <path
+      d="M8.5 16H26.5"
+      stroke="currentColor"
+      stroke-width="1.1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M20 9.75L26.25 16L20 22.25"
+      stroke="currentColor"
+      stroke-width="1.1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+    </button>
+
+    <button
+      type="button"
+      class="hero__control hero__control--prev"
+      aria-label="تصویر قبلی"
+      data-hero-control="prev"
+    >
+    <svg
+    class="hero__control-icon"
+    viewBox="0 0 32 32"
+    fill="none"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <circle cx="4.5" cy="16" r="0.9" fill="currentColor" />
+    <path
+      d="M8.5 16H26.5"
+      stroke="currentColor"
+      stroke-width="1.1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M20 9.75L26.25 16L20 22.25"
+      stroke="currentColor"
+      stroke-width="1.1"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+    </button>
+
+
+
+  </div>
+
+
+  <!-- Slide Progress -->
+  <div
+    class="hero__progress"
+    aria-hidden="true"
+  >
+
+    <span
+      class="hero__progress-line is-active"
+      data-progress="0"
+    ></span>
+
+    <span
+      class="hero__progress-line"
+      data-progress="1"
+    ></span>
+
+    <span
+      class="hero__progress-line"
+      data-progress="2"
+    ></span>
+
+  </div>
+
+
+  <!-- Scroll Indicator -->
+  <a
+    href="#packets"
+    class="hero__scroll"
+    aria-label="رفتن به بخش مجموعه‌ها"
+  >
+
+    <span class="hero__scroll-label">
+      SCROLL
+    </span>
+
+    <span
+      class="hero__scroll-line"
+      aria-hidden="true"
+    ></span>
+
+  </a>
+
+</section>
+
+
+    
+
+    
+
+    <section class="why-us">
+      <div class="why-heading">
+        <span class="why-eyebrow"> WHY MAHOOR </span>
+
+        <h2>چرا ماهور را انتخاب کنید؟</h2>
+
+        <p>کیفیت، زیبایی و آرامش؛ در هر جزئیات.</p>
+      </div>
+
+      <div class="why-us-items">
+        <div class="why-us-track">
+          <!-- نسخه اصلی -->
+          <div class="why-item">
+            <!-- <span class="why-number">01</span> -->
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 3L20 9L12 21L4 9L12 3Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+                <path d="M4 9H20" stroke="currentColor" stroke-width="1.5" />
+                <path
+                  d="M8 9L12 21L16 9"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <h3>کیفیت برتر</h3>
+            <p>استفاده از بهترین متریال</p>
+          </div>
+
+          <div class="why-item">
+            <!-- <span class="why-number">02</span> -->
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 20H21"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M16.5 3.5L20.5 7.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M4 20L5.5 15L16.5 4L20 7.5L9 18.5L4 20Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>متریال باکیفیت</h3>
+            <p>انتخاب متریال با دوام و استاندارد</p>
+          </div>
+
+          <div class="why-item">
+            <!-- <span class="why-number">03</span> -->
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 6H15V17H3V6Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M15 10H19L21 13V17H15V10Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="7"
+                  cy="18"
+                  r="2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+                <circle
+                  cx="17"
+                  cy="18"
+                  r="2"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+              </svg>
+            </div>
+            <h3>قیمت مناسب</h3>
+            <p>بهترین قیمت در کنار کیفیت</p>
+          </div>
+
+          <div class="why-item">
+            <!-- <span class="why-number">04</span> -->
+            <div class="why-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20.84 4.61C20.3292 4.09921 19.7228 3.69411 19.0553 3.41784C18.3877 3.14157 17.6723 2.99954 16.95 2.99954C16.2277 2.99954 15.5123 3.14157 14.8447 3.41784C14.1772 3.69411 13.5708 4.09921 13.06 4.61L12 5.67L10.94 4.61C9.90831 3.57831 8.50886 2.9986 7.05 2.9986C5.59114 2.9986 4.19169 3.57831 3.16 4.61C2.12831 5.64169 1.5486 7.04114 1.5486 8.5C1.5486 9.95886 2.12831 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.3508 11.8792 21.7559 11.2728 22.0322 10.6053C22.3084 9.93774 22.4505 9.2223 22.4505 8.5C22.4505 7.7777 22.3084 7.06226 22.0322 6.39471C21.7559 5.72716 21.3508 5.12079 20.84 4.61Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>رضایت مشتری</h3>
+            <p>رضایت شما مهم‌ترین هدف ماست</p>
+          </div>
+
+          <!-- نسخه تکراری برای حلقه بی‌نهایت -->
+        </div>
+      </div>
+    </section>
+    <!--packets-->
+
+    <section class="mahoor-collections" id="packets">
+      <!-- Section Header -->
+      <div class="collections-heading">
+        <span class="collections-heading__eyebrow"> COLLECTIONS </span>
+
+        <h2 class="collections-heading__title">مجموعه‌های ماهور</h2>
+
+        <p class="collections-heading__description">
+          انتخابی از فرم‌ها، متریال و فضاها برای ساختن خانه‌ای با شخصیت
+          منحصربه‌فرد.
+        </p>
+      </div>
+
+      <!-- Collections Grid -->
+      <div class="collections-grid">
+        <!-- Main Collection -->
+        <article class="collection-card collection-card--main">
+          <div class="collection-card__image">
+            <img
+              src="photo/big-image.jpg"
+              alt="مجموعه مبل‌های ماهور"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="collection-card__overlay"></div>
+
+          <div class="collection-card__content">
+            <!-- <span class="collection-card__number"> 01 </span> -->
+
+            <h3 class="collection-card__title">مبل‌های تکی</h3>
+
+            <span class="collection-card__english"> ARMCHAIRS </span>
+
+            <a href="#" class="collection-card__link">
+              مشاهده مجموعه
+              <span>←</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Dining -->
+        <article class="collection-card collection-card--dining">
+          <div class="collection-card__image">
+            <img
+              src="photo/little1.jpg"
+              alt="مجموعه میزهای غذاخوری"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="collection-card__overlay"></div>
+
+          <div class="collection-card__content">
+            <!-- <span class="collection-card__number"> 02 </span> -->
+
+            <h3 class="collection-card__title">میز غذاخوری</h3>
+
+            <span class="collection-card__english"> DINING </span>
+
+            <a href="#" class="collection-card__link">
+              مشاهده مجموعه
+              <span>←</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Living -->
+        <article class="collection-card collection-card--living">
+          <div class="collection-card__image">
+            <img
+              src="photo/little2.jpg"
+              alt="مجموعه مبلمان نشیمن"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="collection-card__overlay"></div>
+
+          <div class="collection-card__content">
+            <!-- <span class="collection-card__number"> 03 </span> -->
+
+            <h3 class="collection-card__title">فضای نشیمن</h3>
+
+            <span class="collection-card__english"> LIVING </span>
+
+            <a href="#" class="collection-card__link">
+              مشاهده مجموعه
+              <span>←</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Tables -->
+        <article class="collection-card collection-card--tables">
+          <div class="collection-card__image">
+            <img
+              src="photo/little3.jpg"
+              alt="مجموعه میزهای ماهور"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="collection-card__overlay"></div>
+
+          <div class="collection-card__content">
+            <!-- <span class="collection-card__number"> 04 </span> -->
+
+            <h3 class="collection-card__title">میز و اکسسوری</h3>
+
+            <span class="collection-card__english"> TABLES </span>
+
+            <a href="#" class="collection-card__link">
+              مشاهده مجموعه
+              <span>←</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Minimal -->
+        <article class="collection-card collection-card--minimal">
+          <div class="collection-card__image">
+            <img
+              src="photo/little4.jpg"
+              alt="مجموعه مبلمان مینیمال"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="collection-card__overlay"></div>
+
+          <div class="collection-card__content">
+            <!-- <span class="collection-card__number"> 05 </span> -->
+
+            <h3 class="collection-card__title">مینیمال</h3>
+
+            <span class="collection-card__english"> MINIMAL </span>
+
+            <a href="#" class="collection-card__link">
+              مشاهده مجموعه
+              <span>←</span>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!--cards-->
+
+    <section class="mahoor-products" id="products">
+      <!-- SECTION HEADER -->
+      <div class="products-header">
+        <div class="products-index">
+          <span class="products-index__number">04</span>
+
+          <span class="products-index__line"></span>
+
+          <span class="products-index__label"> CURATED OBJECTS </span>
+        </div>
+
+        <div class="products-intro">
+          <span class="products-eyebrow"> MAHOOR / SELECTED COLLECTION </span>
+
+          <h2>
+            اشیایی که به فضا،
+            <em>شخصیت</em> می‌دهند.
+          </h2>
+
+          <p>
+            مجموعه‌ای از فرم‌ها، متریال‌ها و جزئیاتی که برای خلق تجربه‌ای متفاوت
+            از زندگی انتخاب شده‌اند.
+          </p>
+        </div>
+
+        <div class="products-summary">
+          <span class="products-summary__count"> 05 OBJECTS </span>
+
+          <span class="products-summary__year"> SELECTED / 2026 </span>
+        </div>
+      </div>
+
+      <!-- COLLECTION NAVIGATION -->
+      <div class="products-filter" aria-label="دسته‌بندی محصولات">
+        <button
+          class="products-filter__item is-active"
+          type="button"
+          data-filter="all"
+        >
+          <span>ALL</span>
+        </button>
+
+        <button class="products-filter__item" type="button" data-filter="sofa">
+          <span>SOFAS</span>
+        </button>
+
+        <button class="products-filter__item" type="button" data-filter="chair">
+          <span>CHAIRS</span>
+        </button>
+
+        <button class="products-filter__item" type="button" data-filter="table">
+          <span>TABLES</span>
+        </button>
+
+        <button
+          class="products-filter__item"
+          type="button"
+          data-filter="console"
+        >
+          <span>CONSOLES</span>
+        </button>
+      </div>
+
+      <!-- =========================================
+       PRODUCTS EDITORIAL GRID
+  ========================================= -->
+
+      <div class="products-editorial"></div>
+
+      <div class="products-all">
+        <a href="products.html" class="products-all__link">
+          <span class="products-all__line"></span>
+
+          <span class="products-all__content">
+            <span class="products-all__title"> مشاهده تمام مجموعه </span>
+
+            <span class="products-all__english"> EXPLORE ALL OBJECTS </span>
+          </span>
+
+          <span class="products-all__arrow"> ← </span>
+
+          <span class="products-all__line"></span>
+        </a>
+      </div>
+    </section>
+
+    <!--about-->
+
+    <section class="mahoor-about" id="about">
+      <div class="about-editorial">
+        <div class="about-index">
+          <span class="about-index__number"> 05 </span>
+
+          <span class="about-index__line"></span>
+
+          <span class="about-index__label"> ABOUT MAHOOR </span>
+        </div>
+
+        <div class="about-story">
+          <div class="about-story__intro" data-about-reveal>
+            <span class="about-eyebrow"> THE MAHOOR PHILOSOPHY </span>
+
+            <h2>
+              زیبایی، زمانی ماندگار می‌شود که با
+              <em>دقت</em> ساخته شود.
+            </h2>
+
+            <p class="about-story__lead">
+              ماهور نگاهی به مبلمان دارد که در آن فرم، متریال و جزئیات در کنار
+              هم معنا پیدا می‌کنند.
+            </p>
+          </div>
+
+          <div class="about-visual">
+            <div class="about-visual__frame" data-about-reveal>
+              <img
+                src="photo/-50-.png"
+                alt="مجموعه مبلمان ماهور"
+                class="about-visual__image"
+              />
+
+              <span class="about-visual__number"> 01 </span>
+
+              <span class="about-visual__caption">
+                FORM / MATERIAL / DETAIL
+              </span>
+            </div>
+          </div>
+
+          <div class="about-description" data-about-reveal>
+            <span class="about-description__label"> OUR APPROACH </span>
+
+            <p>
+              ماهور مجموعه‌ای از انتخاب‌های دقیق است؛ جایی که کیفیت، راحتی و
+              زیبایی در کنار یکدیگر قرار می‌گیرند تا هر قطعه بخشی از حس و شخصیت
+              فضا باشد.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-philosophy">
+          <div class="about-philosophy__item" data-about-reveal>
+            <span class="about-philosophy__number"> 01 </span>
+
+            <div>
+              <span class="about-philosophy__title"> MATERIAL </span>
+
+              <p>انتخاب متریال با توجه به کیفیت، حس و ماندگاری.</p>
+            </div>
+          </div>
+
+          <div class="about-philosophy__item" data-about-reveal>
+            <span class="about-philosophy__number"> 02 </span>
+
+            <div>
+              <span class="about-philosophy__title"> FORM </span>
+
+              <p>فرم‌هایی ساده، متعادل و ماندگار.</p>
+            </div>
+          </div>
+
+          <div class="about-philosophy__item" data-about-reveal>
+            <span class="about-philosophy__number"> 03 </span>
+
+            <div>
+              <span class="about-philosophy__title"> CRAFT </span>
+
+              <p>توجه به کیفیت ساخت و جزئیاتی که تفاوت را ایجاد می‌کنند.</p>
+            </div>
+          </div>
+
+          <div class="about-philosophy__item" data-about-reveal>
+            <span class="about-philosophy__number"> 04 </span>
+
+            <div>
+              <span class="about-philosophy__title"> DETAIL </span>
+
+              <p>جزئیات کوچک، بخشی از هویت هر قطعه هستند.</p>
+            </div>
+          </div>
+         
+
+
+        </div>
+
+        <!-- =================================================
+             CLOSING STATEMENT
+             ================================================= -->
+         <div class="about-closing">
+          <span class="about-closing__line"></span>
+
+          <p>
+            برای فضاهایی که قرار است
+            <em>حس شوند.</em>
+          </p>
+
+          <span class="about-closing__english">
+            DESIGNED FOR SPACES THAT FEEL LIKE HOME
+          </span>
+
+          <span class="about-closing__line"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!--footer-->
+
+    <footer class="mahoor-footer-section" id="contact"  data-footer-reveal>
+      <div class="mahoor-footer-main">
+        <!-- معرفی -->
+        <div class="footer-brand">
+          <span class="footer-logo">MAHOOR</span>
+
+          <h3>ماهور</h3>
+
+          <p>زیبایی، کیفیت و آرامش؛ انتخابی برای خانه‌هایی با سلیقه خاص.</p>
+        </div>
+
+        <!-- لینک‌ها -->
+        <div class="footer-links" data-footer-item>
+          <h4>دسترسی سریع</h4>
+
+          <a href="#">خانه</a>
+          <a href="products.html">محصولات</a>
+          <a href="#">درباره ما</a>
+          <a href="#">تماس با ما</a>
+        </div>
+
+        <!-- تماس -->
+        <div class="footer-contact" data-footer-item>
+          <h4>ارتباط با ما</h4>
+
+          <a href="tel:09330281835"> 09330281835 </a>
+
+          <a href="mailto:info@mahoor.com"> info@mahoor.com </a>
+
+          <p>تهران، خیابان یافت آباد کوچه احمدشاهی، پلاک ۱۲</p>
+        </div>
+
+        <!-- شبکه اجتماعی -->
+        <div class="footer-social" data-footer-item >
+          <h4>ما را دنبال کنید</h4>
+
+          <div class="social-icons">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect
+                  x="3"
+                  y="3"
+                  width="18"
+                  height="18"
+                  rx="5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg>
+            </a>
+
+            <a href="#" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M21 4L3 11.5L10 14L13 21L21 4Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M10 14L16.5 8.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M20.5 11.5C20.5 16.2 16.7 20 12 20C10.5 20 9.1 19.6 7.9 19L4 20L5 16.2C4.4 15 4 13.6 4 12C4 7.3 7.8 3.5 12.5 3.5C17 3.5 20.5 7.3 20.5 11.5Z"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                />
+
+                <path
+                  d="M8.5 8.5C8.8 8.2 9.2 8.3 9.4 8.7L10.2 10.2C10.4 10.5 10.3 10.8 10 11.1L9.5 11.5C10.1 12.7 11.1 13.7 12.4 14.3L12.8 13.8C13 13.5 13.4 13.5 13.7 13.7L15.2 14.5C15.6 14.7 15.7 15.1 15.4 15.4C15 16 14.4 16.3 13.7 16.1C10.8 15.3 8.7 13.2 7.9 10.3C7.7 9.6 8 9 8.5 8.5Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Scroll to top -->
+      <button
+        type="button"
+        class="footer-scroll-top"
+        id="footerScrollTop"
+        data-footer-item
+        aria-label="بازگشت به بالای صفحه"
+      >
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none">
+          <path
+            d="M12 19V5M12 5L5 12M12 5L19 12"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+
+      <!-- پایین فوتر -->
+      <div class="footer-bottom" data-footer-item>
+        <span> © 1405 ماهور | تمامی حقوق محفوظ است </span>
+
+        <span> طراحی شده با عشق برای خانه شما </span>
+      </div>
+    </footer>
+
+    <script src="js/products/products-spotlight.js"></script>
+    <script src="js/data/products.js"></script>
+    <script src="js/render-data/products-render.js"></script>
+
+    <script src="js/hero.js"></script>
+    <!-- <script src="js/hero-console.js"></script> -->
+    <script src="js/present.js"></script>
+    <script src="js/topbar.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/collections.js"></script>
+    <script src="js/about.js"></script>
+    <script src="js/about-marquee.js"></script>
+    <script src="js/site.js"></script>
+    <script src="js/products-filter.js"></script>
+    <script src="js/render-data/products-reveal.js"></script>
+    <script src="js/footer.js"></script>
+    <!-- <script src="js/Theme.js"></script> -->
+  </body>
+</html>

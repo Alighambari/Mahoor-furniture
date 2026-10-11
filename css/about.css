@@ -1,0 +1,1151 @@
+.mahoor-about {
+
+  display: flex;
+  width: min(92%, 1380px);
+
+  margin: 35px auto 0;
+
+  direction: rtl;
+
+  position: relative;
+  padding: 20px;
+}
+
+/* =========================================================
+   EDITORIAL WRAPPER
+   ========================================================= */
+
+.about-editorial {
+  position: relative;
+
+  width: 100%;
+}
+
+/* =========================================================
+   INDEX
+   ========================================================= */
+
+.about-index {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 55px;
+
+  direction: ltr;
+
+  color: var(--color-accent);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+}
+
+.about-index__number {
+  color: var(--color-accent);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.about-index__line {
+  width: 38px;
+
+  height: 1px;
+
+  background: rgba(200, 169, 126, 0.45);
+
+  transition: width 0.8s var(--ease-cinematic);
+}
+
+.about-editorial:hover .about-index__line {
+  width: 65px;
+}
+
+/* =========================================================
+   MAIN STORY
+   ========================================================= */
+
+.about-story {
+  display: grid;
+
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  column-gap: 28px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   STORY INTRO
+   ========================================================= */
+
+.about-story__intro {
+  grid-column: 1 / 8;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.about-eyebrow {
+  display: block;
+
+  margin-bottom: 20px;
+
+  color: var(--color-accent);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 3.5px;
+
+  direction: ltr;
+
+  text-align: right;
+
+  opacity: 0.85;
+}
+
+/* =========================================================
+   MAIN HEADLINE
+   ========================================================= */
+
+.about-story__intro h2 {
+  max-width: 850px;
+  
+
+  color: var(--color-cream);
+
+  font-size: clamp(44px, 3.6vw, 82px);
+
+  font-weight: 100;
+
+  line-height: 2.2;
+
+  letter-spacing: -0.8px;
+}
+
+.about-story__intro h2 em {
+  position: relative;
+
+  color: var(--color-accent);
+
+  font-style: normal;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   GOLD UNDERLINE
+   ========================================================= */
+
+.about-story__intro h2 em::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: -7px;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgba(200, 169, 126, 0.7));
+
+  transform: scaleX(0.45);
+
+  transform-origin: right;
+
+  transition: transform 0.9s var(--ease-cinematic);
+}
+
+.about-editorial:hover .about-story__intro h2 em::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   LEAD
+   ========================================================= */
+
+.about-story__lead {
+  max-width: 520px;
+
+  margin-top: 36px;
+
+  color: rgba(245, 242, 235, 0.43);
+
+  font-size: 13px;
+
+  font-weight: 300;
+
+  line-height: 2.15;
+
+  text-wrap: balance;
+}
+
+/* =========================================================
+   VISUAL
+   ========================================================= */
+
+.about-visual {
+  grid-column: 8 / 13;
+
+  margin-top: 40px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+.about-visual__frame {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  background: #18130f;
+
+  border: 1px solid rgba(200, 169, 126, 0.12);
+}
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.about-visual__image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transform: scale(1.001);
+
+  filter: brightness(0.88) saturate(0.88) contrast(0.98);
+
+  transition:
+    transform 1.5s var(--ease-cinematic),
+    filter 1s ease;
+}
+
+.about-visual__frame:hover .about-visual__image {
+  transform: scale(1.045);
+
+  filter: brightness(0.82) saturate(0.84) contrast(1.02);
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.about-visual__frame::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 6, 5, 0.04) 25%,
+    rgba(8, 6, 5, 0.18) 60%,
+    rgba(8, 6, 5, 0.72) 100%
+  );
+}
+
+/* =========================================================
+   IMAGE CORNERS
+   ========================================================= */
+
+.about-visual__frame::before {
+  content: "";
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 15px;
+
+  width: 32px;
+
+  height: 32px;
+
+  border-top: 1px solid rgba(200, 169, 126, 0.65);
+
+  border-right: 1px solid rgba(200, 169, 126, 0.65);
+
+  z-index: 3;
+
+  pointer-events: none;
+
+  transition:
+    width 0.8s var(--ease-cinematic),
+    height 0.8s var(--ease-cinematic);
+}
+
+.about-visual__frame:hover::before {
+  width: 48px;
+
+  height: 48px;
+}
+
+/* =========================================================
+   IMAGE NUMBER
+   ========================================================= */
+
+.about-visual__number {
+  position: absolute;
+
+  top: 20px;
+
+  left: 20px;
+
+  z-index: 4;
+
+  color: rgba(245, 242, 235, 0.68);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  direction: ltr;
+}
+
+/* =========================================================
+   IMAGE CAPTION
+   ========================================================= */
+
+.about-visual__caption {
+  position: absolute;
+
+  bottom: 18px;
+
+  right: 20px;
+
+  z-index: 4;
+
+  color: rgba(245, 242, 235, 0.38);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 6px;
+
+  letter-spacing: 2.5px;
+
+  direction: ltr;
+}
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.about-description {
+  grid-column: 1 / 6;
+
+  margin-top: 100px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid rgba(245, 242, 235, 0.08);
+}
+
+.about-description__label {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--color-accent);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+
+  direction: ltr;
+}
+
+.about-description p {
+  margin: 0;
+
+  color: rgba(245, 242, 235, 0.46);
+
+  font-size: 12px;
+
+  font-weight: 300;
+
+  line-height: 2.15;
+}
+
+/* =========================================================
+   PHILOSOPHY
+   ========================================================= */
+
+.about-philosophy {
+  display: grid;
+
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 28px;
+
+  margin-top: 120px;
+
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(245, 242, 235, 0.09);
+}
+
+.about-philosophy__item {
+  display: grid;
+
+  grid-template-columns: auto 1fr;
+
+  gap: 18px;
+
+  min-height: 145px;
+
+  position: relative;
+
+  padding-top: 5px;
+
+  transition: transform 0.7s var(--ease-cinematic);
+}
+.about-philosophy__item:hover {
+  transform: translateY(-6px);
+}
+
+.about-philosophy__item:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  top: 4px;
+  bottom: 4px;
+  left: -14px;
+
+  width: 1px;
+
+background: linear-gradient(180deg, transparent, #b89a63 25%, rgba(200, 169, 126, 0.65) 75%, transparent);
+}
+
+/* =========================================================
+   PHILOSOPHY NUMBER
+   ========================================================= */
+
+.about-philosophy__number {
+  color: rgba(200, 169, 126, 0.55);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  direction: ltr;
+}
+
+/* =========================================================
+   PHILOSOPHY TITLE
+   ========================================================= */
+
+.about-philosophy__title {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--color-cream);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  direction: ltr;
+
+  transition: color 0.4s ease;
+}
+
+.about-philosophy__title::after {
+  content: "";
+
+  display: block;
+
+  width: 0;
+
+  height: 1px;
+
+  margin-top: 10px;
+
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+
+  transition: width 0.6s var(--ease-cinematic);
+}
+
+.about-philosophy__item:hover .about-philosophy__title::after {
+  width: 30px;
+}
+
+.about-philosophy__item:hover .about-philosophy__title {
+  color: var(--color-accent);
+}
+
+/* =========================================================
+   PHILOSOPHY TEXT
+   ========================================================= */
+
+.about-philosophy__item p {
+  max-width: 190px;
+
+  margin: 0;
+
+  color: rgba(245, 242, 235, 0.34);
+
+  font-size: 11px;
+
+  line-height: 2;
+
+  transition: color 0.4s ease;
+}
+
+.about-philosophy__item:hover p {
+  color: rgba(245, 242, 235, 0.5);
+}
+
+/* =========================================================
+   CLOSING STATEMENT
+   ========================================================= */
+
+.about-closing {
+
+  position: relative;              /* ← مهم برای متن انگلیسی absolute */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+  padding-bottom: 80px;
+}
+
+.about-closing__line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(200, 169, 126, 0.38));
+}
+
+.about-closing__line:last-child {
+  background: linear-gradient(90deg, rgba(200, 169, 126, 0.38), transparent);
+}
+
+.about-closing p {
+
+  flex: 0 0 auto;                  /* ← اجازه نمیده کوچیک/بزرگ بشه */
+  margin: 0;
+  color: rgba(245, 242, 235, 0.7);
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.about-closing p em {
+
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+.about-closing__english {
+
+  position: absolute;
+  top:34%;
+  left: 50%;
+  transform: translateX(-50%) translateY(36px);
+  transform: translateX(-50%);
+  margin-top: 20px;
+  color: var(--color-accent);
+  font-family: Arial, sans-serif;
+  font-size: 6px;
+  letter-spacing: 3px;
+  direction: ltr;
+  white-space: nowrap;
+}
+
+.about-editorial.is-visible .about-index {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-editorial.is-visible .about-story__intro {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 100ms;
+}
+
+
+.about-editorial.is-visible .about-visual {
+
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 180ms;
+}
+
+.about-editorial.is-visible .about-description {
+
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 260ms;
+}
+
+.about-editorial.is-visible .about-philosophy__item {
+
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-editorial.is-visible .about-philosophy__item:nth-child(1) {
+  transition-delay: 320ms;
+}
+
+.about-editorial.is-visible .about-philosophy__item:nth-child(2) {
+  transition-delay: 390ms;
+}
+
+.about-editorial.is-visible .about-philosophy__item:nth-child(3) {
+  transition-delay: 460ms;
+}
+
+.about-editorial.is-visible .about-philosophy__item:nth-child(4) {
+  transition-delay: 530ms;
+}
+
+.about-editorial.is-visible .about-closing {
+  opacity: 1;
+
+  transform: translateY(0);
+  transition-delay: 620ms;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .mahoor-about {
+    width: min(92%, 1100px);
+
+    margin-top: 140px;
+  }
+
+  .about-story {
+    column-gap: 20px;
+  }
+
+  .about-story__intro {
+    grid-column: 1 / 8;
+  }
+
+  .about-visual {
+    grid-column: 8 / 13;
+
+    margin-top: 30px;
+  }
+
+  .about-story__intro h2 {
+    font-size: clamp(40px, 6vw, 65px);
+  }
+
+  .about-philosophy {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 55px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .mahoor-about {
+    width: 90%;
+
+    margin-top: 110px;
+  }
+
+  .about-index {
+    margin-bottom: 40px;
+  }
+
+  .about-story {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .about-story__intro {
+    width: 100%;
+  }
+
+  .about-eyebrow {
+    margin-bottom: 16px;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+  }
+
+  .about-story__intro h2 {
+    font-size: clamp(36px, 10.5vw, 50px);
+
+    line-height: 1.25;
+
+    letter-spacing: -0.4px;
+  }
+
+  .about-story__lead {
+    max-width: 100%;
+
+    margin-top: 28px;
+
+    font-size: 12px;
+
+    line-height: 2;
+  }
+
+  .about-visual {
+    width: 88%;
+
+    margin-top: 60px;
+
+    margin-right: auto;
+
+    margin-left: 0;
+  }
+
+  .about-visual__frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-description {
+    width: 88%;
+    margin-top: 70px;
+    margin-right: 0;
+  }
+
+  .about-description p {
+
+    font-size: 11px;
+    line-height: 2.05;
+  }
+
+  .about-philosophy {
+
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 90px;
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .about-philosophy__item {
+
+    min-height: auto;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(245, 242, 235, 0.08);
+  }
+
+  .about-philosophy__item:first-child {
+    border-top: 1px solid rgba(245, 242, 235, 0.08);
+  }
+
+  .about-philosophy__item p {
+    max-width: 250px;
+  }
+
+  .about-closing {
+
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 100px;
+    padding-bottom: 30px;
+  }
+
+  .about-closing__line {
+    width: 100%;
+
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(200, 169, 126, 0.38),
+      transparent
+    );
+  }
+
+  .about-closing p {
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    white-space: normal;
+  }
+
+  .about-closing__english {
+    position: static;
+
+    transform: none;
+
+    text-align: center;
+
+    font-size: 5px;
+
+    letter-spacing: 2.5px;
+  }
+}
+
+
+
+
+/* =========================================================
+   MAHOOR — ABOUT SCROLL REVEAL
+   ========================================================= */
+
+/* حالت اولیه: مخفی، پایین‌تر، با بلور */
+[data-about-reveal] {
+  opacity: 0;
+  transform: translateY(70px);
+  filter: blur(8px);
+  transition:
+    opacity 0.9s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1s ease;
+  will-change: opacity, transform, filter;
+}
+
+/* وقتی سکشن دیده شد، همه چیز انیمیت شود */
+.mahoor-about.is-visible [data-about-reveal] {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ---------------------------------------------------------
+   تاخیرهای پله‌ای (Staggered Delays)
+   --------------------------------------------------------- */
+
+/* اینترو */
+.mahoor-about.is-visible .about-story__intro {
+  transition-delay: 1s;
+}
+
+/* تصویر */
+.mahoor-about.is-visible .about-visual {
+  transition-delay: 0.18s;
+}
+
+.mahoor-about.is-visible .about-visual__frame {
+  animation: scale-in-tl 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition-delay: 1s;
+}
+
+/* توضیحات */
+.mahoor-about.is-visible .about-description {
+  transition-delay: 0.40s;
+}
+
+/* فلسفه — پله‌ای */
+.mahoor-about.is-visible
+.about-philosophy__item:nth-child(1) {
+  transition-delay: 0.45s;
+}
+
+.mahoor-about.is-visible
+.about-philosophy__item:nth-child(2) {
+  transition-delay: 0.55s;
+}
+
+.mahoor-about.is-visible
+.about-philosophy__item:nth-child(3) {
+  transition-delay: 0.65s;
+}
+
+.mahoor-about.is-visible
+.about-philosophy__item:nth-child(4) {
+  transition-delay: 0.75s;
+}
+
+/* ---------------------------------------------------------
+   زوم تصویر
+   --------------------------------------------------------- */
+
+.about-visual__image {
+  transform: scale(1.08);
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mahoor-about.is-visible .about-visual__image {
+  transform: scale(1);
+}
+
+/* ---------------------------------------------------------
+   جمله پایانی
+   --------------------------------------------------------- */
+
+.about-closing {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.9s;
+}
+
+.mahoor-about.is-visible .about-closing {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------------------------------------------------------
+   احترام به تنظیمات کاربر
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-about-reveal],
+  .about-closing,
+  .about-visual__image {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
+
+@keyframes scale-in-tl {
+  0% {
+    transform: scale(0);
+    transform-origin: 0% 0%;
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    transform-origin: 0% 0%;
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   MAHOOR — ABOUT PHILOSOPHY MOTION
+   ========================================================= */
+
+.about-philosophy__item {
+  position: relative;
+  will-change: transform;
+  animation: philosophyFloat 7s ease-in-out infinite;
+}
+
+/* هر آیتم ریتم کمی متفاوت داشته باشد */
+.about-philosophy__item:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.about-philosophy__item:nth-child(2) {
+  animation-delay: -1.5s;
+}
+
+.about-philosophy__item:nth-child(3) {
+  animation-delay: -3s;
+}
+
+.about-philosophy__item:nth-child(4) {
+  animation-delay: -4.5s;
+}
+
+@keyframes philosophyFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* =========================================================
+   PHILOSOPHY — MOVING LIGHT
+   ========================================================= */
+
+.about-philosophy__title {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-philosophy__title::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 55%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200, 169, 126, 0.22),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  animation: philosophyLightSweep 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes philosophyLightSweep {
+  0%,
+  55% {
+    left: -120%;
+  }
+
+  75% {
+    left: 140%;
+  }
+
+  100% {
+    left: 140%;
+  }
+}
+
+
+/* =========================================================
+   MAHOOR — ABOUT CLOSING MOTION
+   ========================================================= */
+
+.about-closing {
+  overflow: hidden;
+}
+
+
+/* خطوط */
+.about-closing__line {
+  position: relative;
+  overflow: hidden;
+
+  animation: closingLineBreath 6s ease-in-out infinite;
+}
+
+.about-closing__line::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -30%;
+
+  width: 25%;
+  height: 100%;
+
+background: linear-gradient(90deg, transparent, var(--color-accent) ,transparent);
+
+  animation: closingLightSweep 5s ease-in-out infinite;
+}
+
+
+/* خط دوم کمی با تأخیر */
+.about-closing__line:last-of-type::after {
+  animation-delay: -2.5s;
+}
+
+
+/* تنفس خطوط */
+@keyframes closingLineBreath {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+
+/* حرکت نور */
+@keyframes closingLightSweep {
+  0%,
+  45% {
+    left: -30%;
+  }
+
+  70% {
+    left: 120%;
+  }
+
+  100% {
+    left: 120%;
+  }
+}
+
+
+/* =========================================================
+   CLOSING TEXT — VERY SUBTLE BREATH
+   ========================================================= */
+
+.about-closing p {
+  animation: closingTextBreath 6s ease-in-out infinite;
+}
+
+@keyframes closingTextBreath {
+  0%,
+  100% {
+    opacity: 0.68;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 0.88;
+    transform: translateY(-2px);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-philosophy__item,
+  .about-philosophy__title::before,
+  .about-closing__line,
+  .about-closing__line::after,
+  .about-closing p {
+    animation: none;
+  }
+}
+

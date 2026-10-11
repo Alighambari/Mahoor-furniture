@@ -1,0 +1,1232 @@
+
+/* =========================================================
+   01. DESIGN TOKENS — LIGHT PALETTE
+   (overrides the :root tokens defined in style 2.css)
+   ========================================================= */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* ---------- Surfaces ---------- */
+    --surface-ivory: #F3EFE7;
+  --surface-paper: #F8F5EF;
+  --surface-stone: #EAE4D8;
+  --surface-sand: #E3D9C9;
+  --surface-dark: #1D1B17;
+  --ink-primary: #181713;
+  --ink-secondary: #5F5A50;
+  --accent-bronze: #9A7040;
+
+  --color-bg: #faf7f2;
+  --color-surface: #f4efe5;
+  --color-surface-elevated: #ffffff;
+  --color-surface-warm: #efe6d5;
+
+  /* ---------- Text (was "cream on dark", now "ink on paper") ---------- */
+
+  --color-cream: #221d17;
+  --color-cream-muted: rgba(34, 29, 23, 0.68);
+  --color-cream-soft: rgba(34, 29, 23, 0.5);
+  --color-cream-faint: rgba(34, 29, 23, 0.32);
+
+  /* ---------- Accent (deepened slightly for contrast on paper) ---------- */
+
+  --color-accent: #a97c3f;
+  --color-accent-light: #c8a97e;
+  --color-accent-soft: rgba(169, 124, 63, 0.14);
+  --color-accent-faint: rgba(169, 124, 63, 0.07);
+
+  /* ---------- Borders ---------- */
+
+  --color-border: rgba(34, 29, 23, 0.09);
+  --color-border-strong: rgba(34, 29, 23, 0.15);
+
+  --color-border-accent: rgba(169, 124, 63, 0.22);
+  --color-border-accent-strong: rgba(169, 124, 63, 0.4);
+
+  /* ---------- Legacy / Compatibility ---------- */
+
+  --color-dark-wood: #e4d7bd;
+
+  /* ---------- Shadows (warm, soft — not pure black) ---------- */
+
+  --shadow-soft: 0 12px 35px rgba(80, 64, 40, 0.1);
+  --shadow-luxury: 0 30px 80px rgba(80, 64, 40, 0.14);
+  --shadow-deep: 0 45px 100px rgba(80, 64, 40, 0.18);
+
+  /* ---------- Topbar ---------- */
+
+  --topbar-line: rgba(34, 29, 23, 0.12);
+  --topbar-line-soft: rgba(34, 29, 23, 0.07);
+  --topbar-text: rgba(34, 29, 23, 0.68);
+  --topbar-text-strong: rgba(20, 17, 13, 0.95);
+  --topbar-muted: rgba(34, 29, 23, 0.4);
+  --topbar-panel: rgba(255, 253, 248, 0.9);
+
+  /* ---------- Accessibility ---------- */
+
+  --focus-ring: 0 0 0 3px rgba(169, 124, 63, 0.28);
+}
+
+/* Smooth cross-fade when the theme switches */
+
+:root[data-theme="light"] body,
+:root:not([data-theme="light"]) body {
+  transition:
+    background-color 0.6s var(--ease-out-smooth, ease),
+    color 0.6s var(--ease-out-smooth, ease);
+    background: var(--color-surface);
+    
+}
+
+.mahoor-topbar .topbar-inner,
+.why-us,
+.mahoor-products,
+/* .mahoor-footer-section, */
+.collection-card__overlay .product__media,
+.about-visual__frame,
+.luxury-surface,
+.luxury-surface--elevated {
+  transition:
+    background-color 0.6s var(--ease-out-smooth, ease),
+    border-color 0.6s var(--ease-out-smooth, ease),
+    color 0.6s var(--ease-out-smooth, ease);
+}
+
+
+
+
+
+/* =========================================================
+   02. BRAND INTRO SPLASH
+   ========================================================= */
+
+:root[data-theme="light"] .brand-intro {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(169, 124, 63, 0.05),
+      transparent 40%
+    ),
+    #fbf8f2;
+}
+
+/* =========================================================
+   03. TOPBAR — hardcoded literals
+   ========================================================= */
+
+:root[data-theme="light"] .topbar-icon{
+
+  color:var(--color-cream);
+
+}
+:root[data-theme="light"] .topbar-link{
+  font-size: 13px;
+  color:var(--color-cream);
+  
+
+}
+:root[data-theme="light"] .topbar-link::after{
+
+  color:var(--color-accent-light);
+
+}
+
+:root[data-theme="light"] .topbar-action:hover {
+  background: rgba(34, 29, 23, 0.045);
+}
+
+:root[data-theme="light"] .topbar-badge {
+  background: var(--color-cream-muted);
+  /* box-shadow: 0 0 0 2px rgba(255, 253, 248, 0.6); */
+}
+
+:root[data-theme="light"] .topbar-search-inner {
+  background: rgba(255, 253, 248, 0.85);
+  box-shadow: 0 25px 70px rgba(80, 64, 40, 0.16);
+}
+
+:root[data-theme="light"] .topbar-search-inner input::placeholder {
+  color: rgba(34, 29, 23, 0.35);
+}
+
+:root[data-theme="light"] .topbar-theme-toggle{
+  color: #000000;
+}
+
+
+:root[data-theme="light"] .topbar-mobile-menu {
+  background: rgba(255, 253, 248, 0.94);
+  box-shadow: 0 30px 80px rgba(80, 64, 40, 0.16);
+}
+
+:root[data-theme="light"] .mahoor-topbar.is-scrolled .topbar-inner {
+  background: var(--color-border);
+
+  border-color: var(--color-dark-wood);
+
+  box-shadow:var(--shadow-deep);
+}
+
+
+/* hero section */
+
+
+:root[data-theme="light"] .hero__media{
+
+  z-index: 2;
+}
+
+  :root[data-theme="light"] .hero__overlay,
+  body.light-theme .hero__overlay {
+    background:
+      /* 1. Warm vignette — lightest at focus, cream at edges */
+      radial-gradient(
+        ellipse 80% 90% at 35% 50%,
+        transparent 0%,
+        rgba(240, 233, 220, 0.15) 75%,
+        rgba(240, 233, 220, 0.4) 100%
+      ),
+      /* 2. Horizontal — cream wash on text side (right, RTL) */
+      linear-gradient(
+        90deg,
+        rgba(240, 233, 220, 0.06) 0%,     /* photo side — almost clear */
+        rgba(240, 233, 220, 0.14) 38%,
+        rgba(240, 233, 220, 0.55) 72%,
+        rgba(240, 233, 220, 0.82) 100%    /* text side — soft panel */
+      ),
+      /* 3. Vertical — top & bottom anchor (very light) */
+      linear-gradient(
+        180deg,
+        rgba(240, 233, 220, 0.28) 0%,
+        transparent 25%,
+        transparent 72%,
+        rgba(240, 233, 220, 0.5) 100%
+      );
+  }
+
+
+
+
+
+  :root[data-theme="light"] .hero__image,
+  body.light-theme .hero__image {
+    filter: saturate(0.92) contrast(1.0) brightness(1.05) sepia(0.04);
+  }
+
+
+
+  /* ---------- 16.4 Gold accent glow (title) ----------------------- */
+
+  :root[data-theme="light"] .hero__title-accent,
+  body.light-theme .hero__title-accent {
+    text-shadow: 0 0 28px rgba(139, 100, 50, 0.12);
+  }
+  :root[data-theme="light"] .hero__title-line,.hero__description{
+    color:var(--color-cream-muted)
+  }
+
+
+  /* ---------- 16.5 Controls — legible on cream ------------------- */
+
+  :root[data-theme="light"] .hero__control,
+  body.light-theme .hero__control {
+    border-color: rgba(26, 22, 19, 0.22);
+    color: var(--hero-ink);
+  }
+
+  :root[data-theme="light"] .hero__control:hover,
+  :root[data-theme="light"] .hero__control:focus-visible,
+  body.light-theme .hero__control:hover,
+  body.light-theme .hero__control:focus-visible {
+    background: rgba(139, 100, 50, 0.08);
+    border-color: rgba(26, 22, 19, 0.4);
+  }
+
+
+
+
+
+
+  :root[data-theme="light"] .hero__control-icon,
+  body.light-theme .hero__control-icon {
+    background: var(--color-cream-faint);
+    color: var(--color-bg);
+  }
+
+  :root[data-theme="light"] .hero__progress-line,
+  body.light-theme .hero__progress-line {
+    background: var(--color-accent-light);
+    height: 2px;
+  }
+  :root[data-theme="light"].hero__progress-line::after{
+
+    color: var(--color-accent-soft) ;
+  }
+
+
+  body.light-theme .hero__scroll {
+    color: rgba(26, 22, 19, 0.55);
+  }
+
+  :root[data-theme="light"] .hero__scroll-line,
+  body.light-theme .hero__scroll-line {
+    background: rgba(26, 22, 19, 0.2);
+  }
+
+
+  :root[data-theme="light"] .hero__cta::before,
+  :root[data-theme="light"] .hero__cta::after,
+  body.light-theme .hero__cta::before,
+  body.light-theme .hero__cta::after {
+    background: var(--hero-accent);
+  }
+    :root[data-theme="light"] .hero__brand-name,
+  body.light-theme .hero__brand-name {
+    color: var(--hero-ink);
+  }
+
+  :root[data-theme="light"] .hero__brand-line,
+  body.light-theme .hero__brand-line {
+    background: var(--color-bg);
+  }
+
+  :root[data-theme="light"] .hero__brand-category,
+  body.light-theme .hero__brand-category {
+    color: rgba(26, 22, 19, 0.5);
+    border-inline-start-color: rgba(139, 100, 50, 0.4);
+  }
+
+
+
+/* =========================================================
+   04. WHY-US / PRESENT SECTION — hardcoded literals
+   ========================================================= */
+
+:root[data-theme="light"] .why-us {
+  background: var(--color-surface);
+  
+
+  border-top-color: rgba(169, 124, 63, 0.16);
+  border-bottom-color: rgba(169, 124, 63, 0.16);
+}
+
+:root[data-theme="light"] .why-us::before{
+  top:10%;
+  height: 35%;
+  background: radial-gradient(circle, #ffffff, rgb(243 218 183 / 65%) 48%);  filter: blur(5px);
+  animation: whyAmbient 4s ease-in-out infinite;
+  border-radius: var(--radius-full);
+}
+:root[data-theme="light"] .why-us::after{
+  height: 1.5px;
+
+}
+
+:root[data-theme="light"] .why-heading p {
+  color: rgba(34, 29, 23, 0.5);
+}
+
+:root[data-theme="light"] .why-us-items {
+  border-top-color: rgba(34, 29, 23, 0.08);
+  border-bottom-color: rgba(34, 29, 23, 0.08);
+}
+
+:root[data-theme="light"] .why-us-items::before,
+:root[data-theme="light"] .why-us-items::after,
+:root[data-theme="light"] .why-item::after {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(169, 124, 63, 0.22) 20%,
+    rgba(169, 124, 63, 0.22) 80%,
+    transparent
+  );
+}
+
+:root[data-theme="light"] .why-item p {
+  color: rgba(34, 29, 23, 0.5);
+}
+
+:root[data-theme="light"] .why-signature p {
+  color: rgba(34, 29, 23, 0.6);
+}
+
+/* =========================================================
+   05. COLLECTIONS — hardcoded literals
+   ========================================================= */
+
+:root[data-theme="light"] .mahoor-collections{
+  background: var(--surface-paper);
+}
+
+:root[data-theme="light"] .collection-card {
+  background:
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(
+        135deg,
+        rgba(169, 124, 63, 0.35),
+        rgba(169, 124, 63, 0.06) 45%,
+        rgba(0, 0, 0, 0.05)
+      )
+      border-box;
+}
+
+:root[data-theme="light"] .collection-card__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(13, 12, 11, 0.02) 20%,
+    rgba(34, 29, 23, 0.09) 100%
+  ) !important;
+}
+
+:root[data-theme="light"] .collections-heading__description {
+  color: rgba(34, 29, 23, 0.5);
+}
+
+/* Card imagery keeps its own dark overlay for legibility over photos —
+   intentionally left as-is. */
+
+/* =========================================================
+   06. ABOUT — hardcoded literals
+   ========================================================= */
+
+:root[data-theme="light"] .mahoor-about {
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(169, 124, 63, 0.05),
+      transparent 40%
+    ),
+    #f3efe7;
+}
+
+:root[data-theme="light"] .about-index {
+  color: rgba(34, 29, 23, 0.34);
+}
+
+:root[data-theme="light"] .about-visual__frame {
+  background: #efe6d5;
+  border-color: rgba(169, 124, 63, 0.16);
+}
+
+:root[data-theme="light"] .about-description {
+  border-top-color: rgba(34, 29, 23, 0.09);
+}
+
+:root[data-theme="light"] .about-description p {
+  color: var(--color-cream);
+}
+
+:root[data-theme="light"] .about-philosophy {
+  border-top-color:  var(--color-accent-soft);
+  background: var(--surface-stone);
+}
+
+:root[data-theme="light"] .about-philosophy__item p {
+  color: rgba(34, 29, 23, 0.4);
+}
+
+:root[data-theme="light"] .about-philosophy__item:hover p {
+  color: rgba(34, 29, 23, 0.62);
+}
+
+:root[data-theme="light"] .about-closing p {
+  color: rgba(34, 29, 23, 0.75);
+}
+
+/* .about-visual__number / .about-visual__caption sit on top of the
+   photo's own dark gradient overlay, so they stay light-on-photo in
+   both themes — intentionally left as-is. */
+
+@media (max-width: 600px) {
+  :root[data-theme="light"] .about-philosophy__item {
+    border-bottom-color: rgba(34, 29, 23, 0.09);
+  }
+
+  :root[data-theme="light"] .about-philosophy__item:first-child {
+    border-top-color: rgba(34, 29, 23, 0.09);
+  }
+
+  :root[data-theme="light"] .about-closing__line{
+    background: linear-gradient(90deg, transparent, var(--color-accent-light));
+  }
+
+}
+
+
+:root[data-theme="light"] .mahoor-products {
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(169, 124, 63, 0.08),
+      transparent 38%
+    ),
+    linear-gradient(180deg, #fbf8f2 0%, #f4efe4 55%, #faf8f3 100%);
+}
+
+:root[data-theme="light"] .product {
+  color: #221d17;
+  /* box-shadow: 20px 20px 60px 6px rgba(0, 0, 0, .35), -20px -20px 60px #ffffff; */
+  border: 1px solid rgba(36, 33, 28, 0.07);
+  border-radius: 32px;
+  padding: 4%;
+  transition: transform 0.6s var(--ease-luxury, ease-in-out);
+}
+:root[data-theme="light"] .product:hover {
+  transform: translateY(-7px);
+  
+
+  box-shadow:
+    0 24px 55px rgba(80, 64, 40, 0.12);
+}
+
+:root[data-theme="light"] .products-index__number,
+:root[data-theme="light"] .products-eyebrow,
+:root[data-theme="light"] .products-summary__count,
+:root[data-theme="light"] .product__number,
+:root[data-theme="light"] .product__title span,
+:root[data-theme="light"] .products-statement__number,
+:root[data-theme="light"] .products-all__english,
+:root[data-theme="light"] .product__arrow,
+:root[data-theme="light"] .products-all__arrow {
+  color: #a97c3f;
+}
+:root[data-theme="light"] .products-intro {
+  color: #221d17;
+}
+
+:root[data-theme="light"] .products-index__line {
+  background: rgba(169, 124, 63, 0.55);
+}
+
+:root[data-theme="light"] .products-index__label,
+:root[data-theme="light"] .products-summary span,
+:root[data-theme="light"] .products-filter__item,
+:root[data-theme="light"] .product__category,
+:root[data-theme="light"] .product__meta > span:first-child {
+  color: rgba(34, 29, 23, 0.42);
+}
+
+:root[data-theme="light"] .products-filter__item:hover,
+:root[data-theme="light"] .products-filter__item.is-active {
+  color: #221d17;
+}
+
+:root[data-theme="light"] .products-filter__item::after {
+  background: #a97c3f;
+}
+
+:root[data-theme="light"] .products-filter {
+  border-bottom-color: rgba(34, 29, 23, 0.1);
+}
+
+:root[data-theme="light"] .product__media {
+  background: #efe6d8;
+}
+
+:root[data-theme="light"] .product__quick-view {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.28);
+  color: #fdfbf7;
+}
+
+:root[data-theme="light"] .product__quick-view:hover {
+  background: rgba(169, 124, 63, 0.85);
+}
+
+:root[data-theme="light"] .product__title h3,
+:root[data-theme="light"] .product__link,
+:root[data-theme="light"] .products-all__link,
+:root[data-theme="light"] .products-all__title {
+  color: #221d17;
+}
+
+:root[data-theme="light"] .product__link:hover,
+:root[data-theme="light"] .products-all__link:hover {
+  color: #a97c3f;
+}
+
+:root[data-theme="light"] .product__favorite {
+  color: rgba(34, 29, 23, 0.55);
+}
+
+:root[data-theme="light"] .product__favorite:hover {
+  color: #a97c3f;
+}
+
+:root[data-theme="light"] .product__footer {
+  border-top-color: rgba(34, 29, 23, 0.08);
+}
+
+:root[data-theme="light"] .product__line {
+  background: rgba(169, 124, 63, 0.4);
+}
+
+:root[data-theme="light"] .products-statement {
+  border-top-color: rgba(169, 124, 63, 0.35);
+  border-bottom-color: rgba(169, 124, 63, 0.35);
+}
+
+:root[data-theme="light"] .products-all__line {
+  background: rgba(34, 29, 23, 0.12);
+}
+
+:root[data-theme="light"] .products-all__link:hover .products-all__line {
+  background: rgba(169, 124, 63, 0.7);
+}
+
+/* .product__overlay is the dark gradient over the product photo for
+   legibility of the quick-view button — left as-is intentionally. */
+
+/* =========================================================
+   08. FOOTER — hardcoded literals
+   (footer.css doesn't use the shared tokens at all, so this
+   remaps the whole section for consistency with the rest of
+   the light theme)
+   ========================================================= */
+
+:root[data-theme="light"] .mahoor-footer-section {
+  background: #f3ece0;
+  color: #221d17;
+  border-top-color: rgba(169, 124, 63, 0.22);
+}
+
+:root[data-theme="light"] .mahoor-footer-section::before {
+  color: var(--color-accent-soft);
+}
+
+:root[data-theme="light"] .mahoor-footer-section::after {
+  background:var(--color-accent);
+}
+
+:root[data-theme="light"] .mahoor-footer-main {
+  border-bottom-color: rgba(34, 29, 23, 0.09);
+}
+
+:root[data-theme="light"] .footer-logo {
+  color: #221d17;
+}
+
+:root[data-theme="light"] .footer-brand p {
+  color: rgba(34, 29, 23, 0.5);
+}
+
+:root[data-theme="light"] .footer-links a {
+  color: rgba(34, 29, 23, 0.68);
+}
+
+:root[data-theme="light"] .footer-links a:hover {
+  color: #221d17;
+}
+
+:root[data-theme="light"] .footer-contact a {
+  color: rgba(34, 29, 23, 0.68);
+}
+
+:root[data-theme="light"] .footer-contact a:hover {
+  color: #a97c3f;
+}
+
+:root[data-theme="light"] .footer-contact p {
+  color: rgba(34, 29, 23, 0.4);
+}
+
+:root[data-theme="light"] .social-icons a {
+  color: rgba(34, 29, 23, 0.55);
+}
+
+:root[data-theme="light"] .footer-bottom span {
+  color: rgba(34, 29, 23, 0.32);
+}
+
+:root[data-theme="light"] .footer-bottom span:last-child {
+  color: rgba(169, 124, 63, 0.65);
+}
+
+/* =========================================================
+   09. SCROLLBAR — hardcoded literals
+   ========================================================= */
+
+:root[data-theme="light"] {
+  scrollbar-color: var(--color-accent) rgba(34, 29, 23, 0.08);
+}
+
+:root[data-theme="light"] ::-webkit-scrollbar-track {
+  background: rgba(244, 239, 229, 0.9);
+  border-left-color: rgba(169, 124, 63, 0.12);
+}
+
+/* =========================================================
+   10. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  :root[data-theme="light"] body,
+  :root:not([data-theme="light"]) body,
+  .mahoor-topbar .topbar-inner,
+  .why-us,
+  .mahoor-products,
+  .mahoor-footer-section,
+  .collection-card,
+  .product__media,
+  .about-visual__frame,
+  .luxury-surface,
+  .luxury-surface--elevated {
+    transition: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   02. SVG
+   ========================================================= */
+
+:root[data-theme="light"] .hero-circle-mark__svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  /*
+   * SVG باید بدون distortion باشد.
+   */
+  overflow: visible;
+
+  /*
+   * Anti-aliasing بهتر
+   */
+  shape-rendering: geometricPrecision;
+
+  text-rendering: geometricPrecision;
+}
+
+
+/* =========================================================
+   03. CIRCLE RINGS
+   ========================================================= */
+
+:root[data-theme="light"] .hero-circle-mark__ring {
+  fill: none;
+
+  vector-effect: non-scaling-stroke;
+
+  /*
+   * خطوط بسیار ظریف برای حفظ حس Luxury.
+   */
+  stroke-width: .7;
+}
+
+
+/* Outer Ring */
+
+:root[data-theme="light"]
+.hero-circle-mark__ring--outer {
+  stroke: rgba(34, 29, 23, .22);
+}
+
+
+/* Inner Ring */
+
+:root[data-theme="light"]
+.hero-circle-mark__ring--inner {
+  stroke: rgba(169, 124, 63, .28);
+
+  /*
+   * خط نارنجی/برنزی کمی متفاوت باشد.
+   */
+  stroke-dasharray: 210 20;
+
+  transform-origin: center;
+
+  /*
+   * یک چرخش بسیار آهسته
+   */
+  animation:
+    mahoorInnerRingRotate
+    24s
+    linear
+    infinite;
+}
+
+
+/* =========================================================
+   04. OUTER CIRCULAR TYPOGRAPHY
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__text {
+  fill: rgba(34, 29, 23, .58);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 6.2px;
+
+  font-weight: 500;
+
+  /*
+   * SVG letter-spacing با واحد em
+   */
+  letter-spacing: .85px;
+
+  text-transform: uppercase;
+
+  /*
+   * جلوگیری از انتخاب متن
+   */
+  user-select: none;
+}
+
+
+/* =========================================================
+   05. OUTER TEXT
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__text--outer {
+  fill: rgba(34, 29, 23, .62);
+
+  font-size: 6px;
+
+  letter-spacing: .8px;
+}
+
+
+/* =========================================================
+   06. INNER CIRCULAR TYPOGRAPHY
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__text--inner {
+  fill: rgba(169, 124, 63, .68);
+
+  font-size: 5.2px;
+
+  font-weight: 500;
+
+  letter-spacing: .72px;
+}
+
+
+/* =========================================================
+   07. CENTER GROUP
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__center {
+  /*
+   * فقط برای کنترل لایه مرکز
+   */
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   08. CENTER DOT
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__center-dot {
+  fill: #b85c32;
+
+  /*
+   * Signature orange
+   */
+  opacity: .9;
+}
+
+
+/* =========================================================
+   09. CENTER INITIALS
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__initials {
+  fill: rgba(34, 29, 23, .76);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 500;
+
+  letter-spacing: 1.4px;
+
+  /*
+   * چون SVG text از baseline استفاده می‌کند.
+   */
+  dominant-baseline: middle;
+}
+
+
+/* =========================================================
+   10. CENTER CROSS / ARCHITECTURAL DETAIL
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__center::before {
+  content: "";
+}
+
+
+/* =========================================================
+   11. SUBTLE ROTATION
+   ========================================================= */
+
+@keyframes mahoorInnerRingRotate {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================================
+   12. MAIN REVEAL
+   ========================================================= */
+
+@keyframes mahoorCircleReveal {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      translateY(-50%)
+      scale(.82)
+      rotate(-8deg);
+
+    filter: blur(6px);
+  }
+
+
+  55% {
+
+    opacity: 1;
+
+    filter: blur(1px);
+  }
+
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      translateY(-50%)
+      scale(1)
+      rotate(0deg);
+
+    filter: blur(0);
+  }
+
+}
+
+
+/* =========================================================
+   13. MICRO FLOAT
+   ========================================================= */
+
+:root[data-theme="light"]
+.hero-circle-mark__svg {
+  animation:
+    mahoorCircleMicroFloat
+    7s
+    ease-in-out
+    1.7s
+    infinite;
+}
+
+
+@keyframes mahoorCircleMicroFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+}
+
+
+/* =========================================================
+   14. DESKTOP — LARGE SCREENS
+   ========================================================= */
+
+@media (min-width: 1400px) {
+
+  :root[data-theme="light"] .hero-circle-mark {
+
+    left: clamp(60px, 2vw, 130px);
+
+    width: 18%;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--outer {
+
+    font-size: 6.2px;
+
+    letter-spacing: .85px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--inner {
+
+    font-size: 5.4px;
+  }
+
+}
+
+
+/* =========================================================
+   15. TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  :root[data-theme="light"] .hero-circle-mark {
+
+    left: 30px;
+
+    top: 58%;
+
+    width: 125px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--outer {
+
+    font-size: 5.7px;
+
+    letter-spacing: .7px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--inner {
+
+    font-size: 4.8px;
+
+    letter-spacing: .6px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__initials {
+
+    font-size: 6.5px;
+  }
+
+}
+
+
+/* =========================================================
+   16. MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  :root[data-theme="light"] .hero-circle-mark {
+
+    /*
+     * در موبایل دایره را به پایین سمت چپ می‌بریم.
+     */
+    left: 20px;
+
+    top: auto;
+
+    bottom: 145px;
+
+    width: 100px;
+
+    transform: scale(.88);
+
+    animation:
+      mahoorCircleRevealMobile
+      1.1s
+      cubic-bezier(.16, 1, .3, 1)
+      .45s
+      forwards;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--outer {
+
+    font-size: 5.2px;
+
+    letter-spacing: .62px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--inner {
+
+    font-size: 4.4px;
+
+    letter-spacing: .5px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__initials {
+
+    font-size: 6px;
+
+    letter-spacing: 1px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__ring {
+
+    stroke-width: .8;
+  }
+
+}
+
+
+/* =========================================================
+   17. MOBILE REVEAL
+   ========================================================= */
+
+@keyframes mahoorCircleRevealMobile {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      scale(.72)
+      rotate(-8deg);
+
+    filter: blur(5px);
+  }
+
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      scale(.88)
+      rotate(0deg);
+
+    filter: blur(0);
+  }
+
+}
+
+
+/* =========================================================
+   18. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  :root[data-theme="light"] .hero-circle-mark {
+
+    left: 15px;
+
+    bottom: 130px;
+
+    width: 86px;
+
+    transform: scale(.86);
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--outer {
+
+    font-size: 4.7px;
+
+    letter-spacing: .55px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__text--inner {
+
+    font-size: 4px;
+
+    letter-spacing: .45px;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__initials {
+
+    font-size: 5.5px;
+  }
+
+}
+
+
+/* =========================================================
+   19. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  :root[data-theme="light"]
+  .hero-circle-mark {
+
+    animation: none;
+
+    opacity: 1;
+
+    transform: translateY(-50%);
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__svg {
+
+    animation: none;
+  }
+
+
+  :root[data-theme="light"]
+  .hero-circle-mark__ring--inner {
+
+    animation: none;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+

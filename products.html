@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="مجموعه کامل محصولات ماهور؛ انتخابی از مبلمان و محصولات لوکس برای فضاهای خاص."
+    />
+
+    <meta name="theme-color" content="#0a0908" />
+
+    <title>محصولات | MAHOOR INTERIOR</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/topbar.css" />
+    <link rel="stylesheet" href="css/light-mode.css" />
+    <link rel="stylesheet" href="css/products-page.css" />
+    <link rel="stylesheet" href="css/scrollbar.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
+</head>
+
+  <body>
+    <!-- =====================================================
+       MAHOOR TOP BAR
+       ===================================================== -->
+
+    <header class="mahoor-topbar" id="mahoorTopbar">
+      <div class="topbar-inner">
+        <!-- BRAND -->
+
+        <a href="index.html" class="topbar-logo" aria-label="صفحه اصلی ماهور">
+          <span class="topbar-logo__name"> MAHOOR </span>
+
+          <span class="topbar-logo__sub"> INTERIOR </span>
+        </a>
+
+        <!-- DESKTOP NAVIGATION -->
+
+        <nav class="topbar-nav" aria-label="منوی اصلی">
+          <a href="index.html" class="topbar-link"> خانه </a>
+
+          <a href="index.html#packets" class="topbar-link"> مجموعه‌ها </a>
+
+          <a
+            href="products.html"
+            class="topbar-link is-active"
+            aria-current="page"
+          >
+            محصولات
+          </a>
+
+          <a href="index.html#about" class="topbar-link"> درباره ما </a>
+
+          <a href="index.html#contact" class="topbar-link"> تماس </a>
+        </nav>
+
+        <!-- TOPBAR ACTIONS -->
+
+        <div class="topbar-actions">
+          <!-- SEARCH -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-search"
+            aria-label="جستجوی محصولات"
+            aria-expanded="false"
+          >
+            <svg
+              class="topbar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle
+                cx="10.8"
+                cy="10.8"
+                r="6.3"
+                stroke="currentColor"
+                stroke-width="1.35"
+              />
+
+              <path
+                d="M15.5 15.5L20 20"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+
+          <!-- WISHLIST -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-favorite"
+            aria-label="علاقه‌مندی‌ها"
+          >
+            <svg
+              class="topbar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M20.8 8.6
+                 C20.8 5.7 18.7 3.5 15.9 3.5
+                 C14.3 3.5 12.8 4.3 12 5.6
+                 C11.2 4.3 9.7 3.5 8.1 3.5
+                 C5.3 3.5 3.2 5.7 3.2 8.6
+                 C3.2 13.2 7.4 16.5 12 20.3
+                 C16.6 16.5 20.8 13.2 20.8 8.6Z"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+
+            <span class="topbar-badge"> 0 </span>
+          </button>
+
+          <!-- SHOPPING BAG -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-bag"
+            aria-label="سبد خرید"
+          >
+            <svg
+              class="topbar-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 8.5H19L18 20H6L5 8.5Z"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linejoin="round"
+              />
+
+              <path
+                d="M9 9V6.5C9 4.84 10.34 3.5 12 3.5C13.66 3.5 15 4.84 15 6.5V9"
+                stroke="currentColor"
+                stroke-width="1.35"
+                stroke-linecap="round"
+              />
+            </svg>
+
+            <span class="topbar-badge"> 0 </span>
+          </button>
+
+          <!-- THEME TOGGLE -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-theme-toggle"
+            id="themeToggle"
+            aria-label="تغییر حالت نمایش"
+          >
+            <svg
+              class="mahoor-orbit"
+              viewBox="0 0 32 32"
+              fill="none"
+              aria-hidden="true"
+            >
+              <!-- Outer architectural orbit -->
+              <circle class="orbit-ring" cx="16" cy="16" r="9.5" />
+
+              <!-- Inner core -->
+              <circle class="orbit-core" cx="16" cy="16" r="4" />
+
+              <!-- Orbit particle -->
+              <circle class="orbit-particle" cx="16" cy="6.5" r="1.15" />
+
+              <!-- Light rays -->
+              <g class="orbit-rays">
+                <line x1="16" y1="2.5" x2="16" y2="4.2" />
+                <line x1="16" y1="27.8" x2="16" y2="29.5" />
+
+                <line x1="2.5" y1="16" x2="4.2" y2="16" />
+                <line x1="27.8" y1="16" x2="29.5" y2="16" />
+
+                <line x1="6.45" y1="6.45" x2="7.65" y2="7.65" />
+                <line x1="24.35" y1="24.35" x2="25.55" y2="25.55" />
+
+                <line x1="24.35" y1="7.65" x2="25.55" y2="6.45" />
+                <line x1="6.45" y1="25.55" x2="7.65" y2="24.35" />
+              </g>
+            </svg>
+          </button>
+
+          <!-- MOBILE MENU -->
+
+          <button
+            type="button"
+            class="topbar-action topbar-menu-toggle"
+            aria-label="باز کردن منوی موبایل"
+            aria-expanded="false"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===================================================
+         SEARCH PANEL
+         =================================================== -->
+
+      <div class="topbar-search-panel" aria-hidden="true">
+        <div class="topbar-search-inner">
+          <span class="topbar-search-label"> جستجوی محصول </span>
+
+          <input
+            type="search"
+            class="topbar-search-input"
+            placeholder="نام محصول را جستجو کنید..."
+            aria-label="جستجوی محصول"
+            autocomplete="off"
+          />
+
+          <button
+            type="button"
+            class="topbar-search-close"
+            aria-label="بستن جستجو"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
+      <!-- ===================================================
+         MOBILE MENU
+         =================================================== -->
+
+      <div class="topbar-mobile-menu" aria-hidden="true">
+        <nav class="topbar-mobile-nav" aria-label="منوی موبایل">
+          <a href="index.html" class="topbar-link"> خانه </a>
+
+          <a href="" class="topbar-link"> مجموعه‌ها </a>
+
+          <a
+            href="products.html"
+            class="topbar-link is-active"
+            aria-current="page"
+          >
+            محصولات
+          </a>
+
+          <a href="index.html" class="topbar-link"> درباره ما </a>
+
+          <a href="index.html" class="topbar-link"> تماس </a>
+        </nav>
+
+        <div class="topbar-mobile-footer">
+          <span> MAHOOR INTERIOR </span>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================================
+       MAIN
+       ===================================================== -->
+
+    <main>
+      <!-- ===================================================
+         PRODUCTS HERO
+         =================================================== -->
+
+      <section class="products-page-hero" aria-labelledby="products-page-title">
+        <div class="products-page-hero__inner">
+          <div class="products-page-hero__meta">
+            <span class="products-page-hero__number"> 06 </span>
+
+            <span class="products-page-hero__line"></span>
+
+            <span class="products-page-hero__label"> MAHOOR COLLECTION </span>
+          </div>
+
+          <div class="products-page-hero__content">
+            <span class="products-page-hero__eyebrow">
+              THE COMPLETE COLLECTION
+            </span>
+
+            <h1 id="products-page-title" class="products-page-hero__title">
+              همه محصولات
+            </h1>
+
+            <p class="products-page-hero__description">
+              مجموعه‌ای از انتخاب‌های دقیق ماهور؛ مبلمانی که فرم، متریال و
+              جزئیات در آن برای ساختن فضایی ماندگار کنار یکدیگر قرار گرفته‌اند.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================
+         PRODUCTS CATALOG
+         =================================================== -->
+
+      <section
+        class="products-page"
+        id="all-products"
+        aria-labelledby="products-catalog-title"
+      >
+        <div class="products-page__inner">
+          <!-- CATALOG HEADER -->
+
+          <header class="products-page__header">
+            <div class="products-page__heading">
+              <span class="products-page__eyebrow"> DISCOVER MAHOOR </span>
+
+              <h2 id="products-catalog-title" class="products-page__title">
+                مجموعه محصولات
+              </h2>
+            </div>
+
+            <div class="products-page__count">
+              <span class="products-page__count-number" id="productsCount">
+                00
+              </span>
+
+              <span class="products-page__count-label"> PRODUCTS </span>
+            </div>
+          </header>
+
+          <!-- =================================================
+             FILTER / SORT BAR
+             ================================================= -->
+
+          <div class="products-page__toolbar">
+            <!-- CATEGORY FILTER -->
+
+            <div
+              class="products-page__filters"
+              role="group"
+              aria-label="فیلتر محصولات"
+            >
+              <button
+                type="button"
+                class="products-filter__btn is-active"
+                data-filter="all"
+                aria-pressed="true"
+              >
+                همه
+              </button>
+
+              <button
+                type="button"
+                class="products-filter__btn"
+                data-filter="sofa"
+                aria-pressed="false"
+              >
+                مبل
+              </button>
+
+              <button
+                type="button"
+                class="products-filter__btn"
+                data-filter="chair"
+                aria-pressed="false"
+              >
+                صندلی
+              </button>
+
+              <button
+                type="button"
+                class="products-filter__btn"
+                data-filter="table"
+                aria-pressed="false"
+              >
+                میز
+              </button>
+
+              <button
+                type="button"
+                class="products-filter__btn"
+                data-filter="accessory"
+                aria-pressed="false"
+              >
+                اکسسوری
+              </button>
+            </div>
+
+            <!-- SORT -->
+
+            <div class="products-page__sort">
+              <label for="productsSort" class="products-page__sort-label">
+                مرتب‌سازی
+              </label>
+
+              <select
+                id="productsSort"
+                class="products-page__sort-select"
+                aria-label="مرتب‌سازی محصولات"
+              >
+                <option value="default">پیش‌فرض</option>
+
+                <option value="newest">جدیدترین</option>
+
+                <option value="price-low">ارزان‌ترین</option>
+
+                <option value="price-high">گران‌ترین</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- =================================================
+             PRODUCTS GRID
+             ================================================= -->
+
+          <div
+            class="products-page__grid mahoor-products"
+            id="productsGrid"
+            aria-live="polite"
+          >
+            <!--
+            محصولات در مرحله JavaScript
+            به صورت داینامیک اینجا قرار می‌گیرند.
+          --></div>
+
+          <!-- =================================================
+             EMPTY STATE
+             ================================================= -->
+
+          <div class="products-page__empty" id="productsEmpty" hidden>
+            <span class="products-page__empty-number"> 00 </span>
+
+            <h3>محصولی پیدا نشد</h3>
+
+            <p>در حال حاضر محصولی با این فیلتر وجود ندارد.</p>
+
+            <button
+              type="button"
+              class="products-page__reset"
+              id="productsReset"
+            >
+              نمایش همه محصولات
+            </button>
+          </div>
+
+          <!-- LOAD MORE -->
+
+          <div class="products-page__footer">
+            <button
+              type="button"
+              class="products-page__load-more"
+              id="productsLoadMore"
+            >
+              <span class="products-page__load-more-line"></span>
+
+              <span class="products-page__load-more-content">
+                <span class="products-page__load-more-title">
+                  نمایش محصولات بیشتر
+                </span>
+
+                <span class="products-page__load-more-subtitle">
+                  LOAD MORE PRODUCTS
+                </span>
+              </span>
+
+              <span class="products-page__load-more-arrow"> ↓ </span>
+
+              <span class="products-page__load-more-line"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- CLOSING STATEMENT -->
+
+      <section class="products-page-closing" aria-label="درباره مجموعه ماهور">
+        <div class="products-page-closing__inner">
+          <span class="products-page-closing__label"> MAHOOR INTERIOR </span>
+
+          <p class="products-page-closing__text">
+            قطعاتی برای فضاهایی که قرار است
+            <em>حس شوند.</em>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="mahoor-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-brand__name"> MAHOOR </span>
+
+          <span class="footer-brand__sub"> INTERIOR </span>
+        </div>
+
+        <div class="footer-copy">
+          <span> © MAHOOR INTERIOR </span>
+
+          <span> ALL RIGHTS RESERVED </span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/data/products.js"></script>
+    <script src="js/render-data/products-render.js"></script>
+
+    <script src="js/site.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/topbar.js" defer></script>
+    <!-- <script src="js/products-filter.js" defer></script> -->
+    <!-- <script src="js/products-data.js" defer></script> -->
+  </body>
+</html>

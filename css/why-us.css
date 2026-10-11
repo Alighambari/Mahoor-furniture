@@ -1,0 +1,394 @@
+.why-us::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: -280px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(184, 154, 99, 0.35), rgba(34, 29, 23, 0.68) 68%);
+  filter: blur(48px);
+  opacity: 0.55;
+  pointer-events: none;
+  animation: whyAmbient 9s ease-in-out infinite;
+}
+@keyframes whyAmbient {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(0.9);
+  }
+
+  50% {
+    transform: translateX(-50%) scale(1.08);
+  }
+}
+
+
+
+.why-us {
+  position: relative;
+  margin-top: 0;
+  width: 100%;
+
+  min-height: 0;                  /* ← حذف ارتفاع اجباری */
+  padding: 60px 0 50px;           /* ← پدینگ کم‌تر */
+
+  direction: rtl;
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
+
+  color: var(--color-cream);
+  border-top: 1px solid rgba(200, 169, 126, 0.08);
+  border-bottom: 1px solid rgba(200, 169, 126, 0.08);
+}
+.why-us::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 180px;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
+
+  opacity: 0.6;
+}
+.why-us h2 {
+  margin: 0;
+  color: var(--color-cream);
+  font-size: clamp(28px, 3.2vw, 46px);
+  font-weight: 100;
+  line-height: 1.5;
+  letter-spacing: -1px;
+}
+
+.why-heading {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  margin: 0 auto 40px;       /* ← از 34px فشرده‌تر تا سکشن کوتاه‌تر شه */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.why-eyebrow {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--color-accent);
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 6px;
+  direction: ltr;
+  opacity: 0.8;
+}
+
+.why-heading p {
+  margin: 14px auto 0;       /* ← از 20px کم‌تر */
+}
+/* =========================================
+   WHY-US — INFINITE MARQUEE (RIGHT → LEFT)
+   ========================================= */
+
+.why-us-items {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  margin: 0 auto;
+
+  /* ⚠️ مهم: LTR کنیم تا ترک از سمت چپ شروع کنه */
+  direction: ltr;
+
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
+}
+
+.why-us-items::before {
+  content: "";
+  position: absolute;
+  top: 16%;
+  bottom: 16%;
+  right: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(200, 169, 126, 0.22) 20%,
+    rgba(200, 169, 126, 0.22) 80%,
+    transparent
+  );
+
+  pointer-events: none;
+}
+.why-us-items::after {
+  content: "";
+  position: absolute;
+  top: 16%;
+  bottom: 16%;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(200, 169, 126, 0.22) 20%,
+    rgba(200, 169, 126, 0.22) 80%,
+    transparent
+  );
+
+  pointer-events: none;
+}
+
+/* ---------- ترک متحرک ---------- */
+.why-us-track {
+  display: flex;
+
+  /* 🔑 کلید حل مشکل: ترتیب معکوس تا ظاهر RTL حفظ بشه */
+  flex-direction: row-reverse;
+
+  width: max-content;
+  animation: whyMarquee 40s linear infinite;
+  will-change: transform;
+}
+
+/* ⚠️ در LTR با row-reverse، آیتم اول راست‌ترین است.
+   پس translateX منفی = حرکت به چپ (راست به چپ) */
+@keyframes whyMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-100% / var(--marquee-copies, 2))); }
+}
+
+
+
+/* توقف روی هاور */
+.why-us-items:hover .why-us-track {
+  animation-play-state: paused;
+}
+
+/* ---------- هر کارت ---------- */
+.why-item {
+  position: relative;
+  flex-shrink: 0;
+
+  /* ⚠️ مهم: RTL رو روی آیتم برگردون */
+  direction: rtl;
+
+  width: 300px;
+  min-height: 200px;
+  padding: 26px 22px 22px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 48px;
+  isolation: isolate;
+  border-left: 1px solid rgba(200, 169, 126, 0.1);
+
+  transition:
+    background 0.5s ease,
+    transform 0.5s var(--ease-cinematic);
+}
+
+
+
+/* درخشش مرکزی روی هاور
+.why-item::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: -1;
+  border-radius: 2px;
+  background: radial-gradient(
+    circle at center,
+    rgba(200, 169, 126, 0.07),
+    transparent 68%
+  );
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 0.6s ease,
+    transform 0.7s var(--ease-cinematic);
+}
+
+.why-item:hover::before {
+  opacity: 1;
+  transform: scale(1);
+} */
+
+/* ---------- شماره ---------- */
+.why-number {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: rgba(200, 169, 126, 0.42);
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 2px;
+  direction: ltr;
+}
+
+/* ---------- آیکن ---------- */
+.why-icon {
+  position: relative;
+  width: 52px;               /* ← کوچک‌تر از 62px */
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;       /* ← فشرده‌تر */
+  border: 1px solid rgba(200, 169, 126, 0.38);
+  border-radius: 50%;
+  color: var(--color-accent);
+  background: rgba(200, 169, 126, 0.035);
+  box-shadow: inset 0 0 20px rgba(200, 169, 126, 0.025);
+  transition:
+    transform 0.6s var(--ease-cinematic),
+    border-color 0.5s ease,
+    background 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.why-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.why-icon::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(200, 169, 126, 0.12);
+  border-radius: 50%;
+}
+
+.why-icon::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    var(--color-accent) 15%,
+    transparent 30%
+  );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 1px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 2px),
+    #000 calc(100% - 1px)
+  );
+  opacity: 0;
+  animation: whyRingSpin 3s linear infinite;
+  animation-play-state: paused;
+  transition: opacity 0.5s ease;
+}
+
+.why-item:hover .why-icon::after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+@keyframes whyRingSpin {
+  to { transform: rotate(360deg); }
+}
+
+.why-item:hover .why-icon {
+  transform: translateY(-5px) scale(1.06);
+  border-color: rgba(200, 169, 126, 0.75);
+  background: rgba(200, 169, 126, 0.08);
+  box-shadow: 0 0 30px rgba(200, 169, 126, 0.08);
+}
+
+/* ---------- متن کارت ---------- */
+.why-item h3 {
+  margin: 4px 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-cream);      /* ← قبلاً #35322d بود که تیره و ناخوانا بود */
+  letter-spacing: -0.2px;
+}
+
+.why-item p {
+  margin: 0;
+  font-family: "Vazirmatn", sans-serif;
+  max-width: 190px;
+  color: rgba(245, 242, 235, 0.45);
+  font-size: 10.5px;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.why-item h3::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1px;
+  margin: 8px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
+  transition: width 0.6s var(--ease-cinematic);
+}
+
+.why-item:hover h3::after {
+  width: 42px;
+}
+
+
+
+.why-signature {
+  position: relative;
+  z-index: 2;
+  margin-top: 36px;      /* ← از 51px کم‌تر */
+  text-align: center;
+}
+
+.why-signature span {
+  display: block;
+  margin-bottom: 12px;   /* ← فشرده‌تر */
+  color: var(--color-accent);
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 7px;
+  direction: ltr;
+  opacity: 0.7;
+}
+
+.why-signature p {
+  margin: 0;
+  color: rgba(245, 242, 235, 0.55);
+  font-size: 13px;       /* ← از 14px کمی کوچک‌تر */
+  font-weight: 300;
+  line-height: 2;
+}

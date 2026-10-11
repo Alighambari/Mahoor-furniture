@@ -1,0 +1,110 @@
+@media (max-width: 760px) {
+  .mahoor-topbar {
+    top: 16px;
+
+    width: calc(100% - 28px);
+  }
+
+  .topbar-inner {
+    min-height: 62px;
+
+    padding: 0 14px;
+
+    gap: 12px;
+
+    border-radius: 0;
+  }
+
+  .topbar-nav {
+    display: none;
+  }
+
+  .topbar-actions {
+    display: none;
+  }
+
+  .topbar-logo {
+    margin-right: auto;
+
+    min-width: auto;
+  }
+
+  .topbar-logo__name {
+    font-size: 16px;
+
+    letter-spacing: 6px;
+  }
+
+  .topbar-logo__sub {
+    margin-top: 5px;
+
+    font-size: 5px;
+
+    letter-spacing: 3px;
+  }
+
+  .topbar-menu-toggle {
+    display: flex;
+
+    order: -1;
+  }
+
+  .topbar-mobile-menu {
+    display: flex;
+  }
+
+  .mahoor-topbar.is-scrolled {
+    top: 8px;
+
+    width: calc(100% - 18px);
+  }
+
+  .mahoor-topbar.is-scrolled .topbar-inner {
+    min-height: 58px;
+
+    padding: 0 12px;
+
+    border-radius: 12px;
+  }
+
+  .topbar-search-panel {
+    top: calc(100% + 8px);
+
+    padding: 0;
+  }
+
+  .topbar-search-inner {
+    min-height: 62px;
+
+    padding: 0 16px;
+
+    gap: 12px;
+  }
+
+  .topbar-search-label {
+    display: none;
+  }
+
+  .topbar-mobile-menu {
+    top: calc(100% + 8px);
+
+    min-height: 410px;
+
+    padding: 35px 24px 24px;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .topbar-mobile-menu {
+    min-height: 390px;
+  }
+
+  .topbar-mobile-nav a {
+    min-height: 60px;
+
+    font-size: 15px;
+  }
+}
+
+

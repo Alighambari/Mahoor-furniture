@@ -1,0 +1,376 @@
+/* =========================================================
+   MAHOOR — LUXURY FOOTER
+   ========================================================= */
+
+.mahoor-footer-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-surface-elevated);;
+  color: #f5f2eb;
+  padding: 110px 7% 32px;
+  border-top: 1px solid rgba(200, 169, 126, 0.18);
+}
+
+/* =========================================================
+   BACKGROUND BRAND
+   ========================================================= */
+
+.mahoor-footer-section::before {
+  content: "MAHOOR";
+  position: absolute;
+  left: 50%;
+  bottom: 17%;
+  transform: translateX(-50%);
+  font-family: Arial, sans-serif;
+  font-size: clamp(100px, 17vw, 250px);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+  white-space: nowrap;
+  color: rgba(245, 242, 235, 0.025);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================================
+   MAIN FOOTER
+   ========================================================= */
+
+.mahoor-footer-main {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr 1.3fr 1fr;
+  gap: 70px;
+  padding-bottom: 95px;
+  border-bottom: 1px solid rgba(245, 242, 235, 0.08);
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 18px;
+  font-family: Arial, sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+   color: var(--color-accent-soft);;
+}
+
+.footer-brand h3 {
+  margin: 0 0 22px;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+.footer-brand p {
+  margin: 0;
+  max-width: 300px;
+  font-size: 14px;
+  line-height: 2.2;
+  color: rgba(245, 242, 235, 0.45);
+}
+
+/* =========================================================
+   COLUMN TITLES
+   ========================================================= */
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  position: relative;
+  margin: 4px 0 30px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--color-accent);
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-links a {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--topbar-text);
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.footer-links a::before {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transform: translateY(-50%);
+  transition: width 0.35s ease;
+}
+
+.footer-links a:hover {
+  color: #f5f2eb;
+  transform: translateX(-6px);
+}
+
+.footer-links a:hover::before {
+  width: 10px;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-contact a {
+  margin-bottom: 13px;
+  color: rgba(245, 242, 235, 0.65);
+  font-size: 14px;
+  text-decoration: none;
+  direction: ltr;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+.footer-contact a:hover {
+  color: var(--color-accent);
+  transform: translateX(-4px);
+}
+
+.footer-contact p {
+  max-width: 240px;
+  margin: 10px 0 0;
+  color: rgba(245, 242, 235, 0.35);
+  font-size: 12px;
+  line-height: 2;
+}
+
+/* =========================================================
+   SOCIAL
+   ========================================================= */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icons a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--topbar-line);
+  border-radius: var(--radius-circle);
+
+  color: rgba(245, 242, 235, 0.55);
+  transition:
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    background 0.35s ease;
+}
+
+.social-icons svg {
+  width: 17px;
+  height: 17px;
+}
+
+.social-icons a:hover {
+  color: var(--color-accent);
+  border-color: rgba(200, 169, 126, 0.6);
+  background: rgba(200, 169, 126, 0.04);
+  transform: translateY(-5px);
+}
+
+/* =========================================================
+   SCROLL TO TOP
+   ========================================================= */
+
+.footer-scroll-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin: 0 auto;
+  border: 1px solid rgba(200, 169, 126, 0.3);
+  border-radius: var(--radius-circle);
+  background: rgba(200, 169, 126, 0.04);
+  color: var(--color-accent);
+  cursor: pointer;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.footer-scroll-top:hover {
+
+  background: rgba(200, 169, 126, 0.12);
+  border-color: rgba(200, 169, 126, 0.6);
+  transform: translateY(-4px);
+}
+
+/* =========================================================
+   FOOTER BOTTOM
+   ========================================================= */
+
+.footer-bottom {
+
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.footer-bottom span {
+
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: rgba(245, 242, 235, 0.28);
+}
+
+.footer-bottom span:last-child {
+  color: rgba(200, 169, 126, 0.45);
+}
+
+/* =========================================================
+   DECORATIVE GOLD LINE
+   ========================================================= */
+
+.mahoor-footer-section::after {
+
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 7%;
+  width: 90px;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+/* =========================================================
+   DESKTOP REFINEMENT
+   ========================================================= */
+
+@media (min-width: 1200px) {
+  .mahoor-footer-section {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .mahoor-footer-main {
+    grid-template-columns: 1.8fr 1fr 1.2fr 1fr;
+    gap: 90px;
+  }
+
+  .footer-logo {
+    font-size: 42px;
+  }
+}
+
+/* =========================================================
+   MAHOOR — FOOTER SCROLL REVEAL
+   ========================================================= */
+
+/* حالت اولیه: فوتر مخفی است */
+[data-footer-reveal] {
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: 0% 100%; /* از پایین به بالا */
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease;
+  will-change: transform, opacity;
+}
+
+/* وقتی فوتر دیده شد، scaleY از 0 به 1 می‌رود */
+[data-footer-reveal].is-visible {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* ---------------------------------------------------------
+   آیتم‌های داخل فوتر: مخفی با جابجایی و بلور
+   --------------------------------------------------------- */
+
+[data-footer-item] {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(6px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
+  will-change: opacity, transform, filter;
+}
+
+/* وقتی فوتر is-visible شد، آیتم‌ها هم ظاهر شوند */
+[data-footer-reveal].is-visible [data-footer-item] {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* ---------------------------------------------------------
+   تأخیر پله‌ای برای هر ستون
+   --------------------------------------------------------- */
+
+[data-footer-reveal].is-visible .footer-brand  { transition-delay: 0.35s; }
+[data-footer-reveal].is-visible .footer-links  { transition-delay: 0.5s;  }
+[data-footer-reveal].is-visible .footer-contact{ transition-delay: 0.65s; }
+[data-footer-reveal].is-visible .footer-social { transition-delay: 0.8s;  }
+
+[data-footer-reveal].is-visible .footer-scroll-top { transition-delay: 0.95s; }
+[data-footer-reveal].is-visible .footer-bottom      { transition-delay: 1.05s; }
+
+/* ---------------------------------------------------------
+   احترام به prefers-reduced-motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-footer-reveal],
+  [data-footer-item] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,860 @@
+/* =========================================================
+   MAHOOR — LUXURY TOP BAR
+   Architectural / Editorial / Premium
+========================================================= */
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+.mahoor-topbar {
+  position: absolute;
+  top: 24px;
+  left: 50%;
+  z-index: 1000;
+  width: min(92%, 1380px);
+  padding: 0;
+  direction: rtl;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-18px);
+  filter: blur(8px);
+  animation: mahoorTopbarReveal 1.2s var(--ease-soft-return) 0.65s forwards;
+}
+
+@keyframes mahoorTopbarReveal {
+  0% {
+    opacity: 0;
+
+    transform: translateX(-50%) translateY(-18px);
+
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform: translateX(-50%) translateY(0);
+
+    filter: blur(0);
+  }
+}
+
+/* =========================================================
+   INNER
+========================================================= */
+
+.topbar-inner {
+  position: relative;
+  width: 100%;
+  min-height: 70px;
+  padding: 0 28px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid var(--topbar-line);
+  border-bottom: 1px solid var(--topbar-line);
+  transition:
+    background 0.6s ease,
+    border-color 0.6s ease,
+    box-shadow 0.6s ease,
+    min-height 0.6s var(--ease-soft-return);
+}
+
+/* =========================================================
+   TOPBAR AMBIENT LIGHT
+========================================================= */
+
+.topbar-inner::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 8%;
+  width: 120px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--topbar-accent),
+    transparent
+  );
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.topbar-inner::after {
+    
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 12%;
+  width: 90px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--topbar-accent),
+    transparent
+  );
+
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.topbar-logo {
+    
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 112px;
+  color: var(--topbar-accent);
+  text-decoration: none;
+  line-height: 1;
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s var(--ease-soft-return);
+}
+
+.topbar-logo:hover {
+
+  opacity: 0.8;
+  transform: translateY(-1px);
+}
+
+.topbar-logo__name {
+
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 7px;
+  transform: translateX(3px);
+}
+
+.topbar-logo__sub {
+
+  margin-top: 6px;
+  color: var(--topbar-muted);
+  font-family: Arial, sans-serif;
+  font-size: 6px;
+  font-weight: 400;
+  letter-spacing: 4px;
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.topbar-nav {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.topbar-link {
+    
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  color: var(--topbar-text);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 300;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    color 0.45s ease,
+    transform 0.45s var(--ease-soft-return);
+}
+
+.topbar-link:hover,
+.topbar-link.is-active {
+  color: var(--topbar-text-strong);
+
+  transform: translateY(-1px);
+}
+
+/* underline */
+
+.topbar-link::after {
+
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 17px;
+  width: 0;
+  height: 1px;
+  background: var(--topbar-accent);
+  box-shadow: 0 0 10px rgba(200, 169, 126, 0.35);
+  transition: width 0.55s var(--ease-soft-return);
+}
+
+.topbar-link:hover::after,
+.topbar-link.is-active::after {
+  width: 100%;
+}
+
+/* small active dot */
+
+.topbar-link.is-active::before {
+
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--topbar-accent);
+  opacity: 0.75;
+  transform: translateX(50%);
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.topbar-actions {
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: auto;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   ACTION BUTTON
+========================================================= */
+
+.topbar-action {
+
+  position: relative;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 20px;
+  outline: none;
+  background: transparent;
+  color: var(--topbar-text);
+  cursor: pointer;
+  transition:
+    color 0.4s ease,
+    background 0.4s ease,
+    transform 0.45s var(--ease-soft-return);
+}
+
+.topbar-action:hover {
+
+  color: var(--topbar-text-strong);
+  background: rgba(245, 242, 235, 0.035);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SVG ICONS
+========================================================= */
+
+.topbar-icon {
+
+  width: 19px;
+  height: 19px;
+  display: block;
+  overflow: visible;
+  transition: transform 0.45s var(--ease-soft-return);
+}
+
+.topbar-action:hover .topbar-icon {
+  transform: scale(1.04);
+}
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.topbar-badge {
+
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  min-width: 14px;
+  height: 14px;
+  padding: 0 3px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(200, 169, 126, 0.42);
+  border-radius: 50%;
+  background: rgba(18, 15, 13, 0.94);
+  color: var(--topbar-accent);
+  font-family: Arial, sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 1;
+  /* box-shadow: 0 0 0 2px rgba(18, 15, 13, 0.25); */
+}
+
+/* =========================================================
+   SEARCH PANEL
+========================================================= */
+
+.topbar-search-panel {
+
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  padding: 0 28px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.985);
+  transition:
+    opacity 0.45s ease,
+    visibility 0.45s ease,
+    transform 0.55s var(--ease-soft-return);
+}
+
+.topbar-search-inner {
+
+  position: relative;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 0 24px;
+  border: 1px solid rgba(200, 169, 126, .18);;
+  border-radius: var(--radius-lg);
+  background: rgba(18, 15, 13, 0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.topbar-search-inner::before {
+
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 10%;
+  width: 90px;
+  height: 1px;
+  background: var(--topbar-accent);
+  opacity: 0.55;
+}
+
+.topbar-search-label {
+
+  flex-shrink: 0;
+  color: var(--topbar-accent);
+  font-family: Arial, sans-serif;
+  font-size: 7px;
+  letter-spacing: 3px;
+}
+
+.topbar-search-inner input {
+
+  flex: 1;
+  height: 45px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--topbar-text-strong);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  direction: rtl;
+}
+
+.topbar-search-inner input::placeholder {
+  color: rgba(245, 242, 235, 0.32);
+}
+
+.topbar-search-close {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: var(--topbar-muted);
+  cursor: pointer;
+  transition:
+    color 0.35s ease,
+    transform 0.4s ease;
+}
+
+.topbar-search-close:hover {
+  color: var(--topbar-accent);
+
+  transform: rotate(90deg);
+}
+
+.topbar-search-close svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* =========================================================
+   SEARCH — OPEN STATE
+========================================================= */
+
+.mahoor-topbar.search-open .topbar-search-panel {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: translateY(0) scale(1);
+}
+
+/* وقتی Search باز است */
+
+.mahoor-topbar.search-open .topbar-search {
+  color: var(--topbar-accent);
+
+  background: rgba(200, 169, 126, 0.06);
+}
+
+/* Search icon */
+
+.mahoor-topbar.search-open .topbar-search .topbar-icon {
+  transform: rotate(90deg) scale(1.04);
+}
+
+/* =========================================================
+   MAHOOR ORBIT — THEME TOGGLE
+========================================================= */
+
+.topbar-theme-toggle {
+  position: relative;
+  color: var(--topbar-accent);
+}
+
+/* =========================================================
+   ORBIT SVG
+========================================================= */
+
+.mahoor-orbit {
+  width: 33px;
+  height: 33px;
+  overflow: visible;
+  transition: transform 0.8s var(--ease-soft-return);
+}
+
+/* =========================================================
+   OUTER RING
+========================================================= */
+
+.orbit-ring {
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.8;
+  opacity: 0.65;
+  transform-origin: center;
+  transition:
+    transform 0.8s var(--ease-soft-return),
+    opacity 0.5s ease;
+}
+
+/* =========================================================
+   CORE
+========================================================= */
+
+.orbit-core {
+  fill: currentColor;
+
+  opacity: 0.72;
+
+  transform-origin: center;
+
+  transition:
+    transform 0.7s var(--ease-soft-return),
+    opacity 0.5s ease;
+}
+
+/* =========================================================
+   PARTICLE
+========================================================= */
+
+.orbit-particle {
+  fill: currentColor;
+
+  transform-origin: 16px 16px;
+
+  transition: transform 0.9s var(--ease-soft-return);
+}
+
+/* =========================================================
+   RAYS
+========================================================= */
+
+.orbit-rays {
+
+  stroke: currentColor;
+  stroke-width: 0.75;
+  stroke-linecap: round;
+  opacity: 0;
+  transform: scale(0.35) rotate(-25deg);
+  transform-origin: 16px 16px;
+  transition:
+    opacity 0.45s ease,
+    transform 0.8s var(--ease-soft-return);
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.topbar-theme-toggle:hover .mahoor-orbit {
+  transform: rotate(12deg) scale(1.06);
+}
+
+.topbar-theme-toggle:hover .orbit-ring {
+  opacity: 1;
+}
+
+.topbar-theme-toggle:hover .orbit-core {
+  opacity: 1;
+}
+
+/* =========================================================
+   LIGHT MODE
+========================================================= */
+
+:root[data-theme="light"] .orbit-ring {
+  opacity: 0.5;
+
+  transform: scale(0.88);
+}
+
+:root[data-theme="light"] .orbit-core {
+  opacity: 1;
+
+  transform: scale(1.18);
+}
+
+:root[data-theme="light"] .orbit-particle {
+  transform: rotate(180deg);
+}
+
+:root[data-theme="light"] .orbit-rays {
+  opacity: 0.8;
+
+  transform: scale(1) rotate(0);
+}
+
+/* =========================================================
+   LIGHT MODE HOVER
+========================================================= */
+
+:root[data-theme="light"] .topbar-theme-toggle:hover .mahoor-orbit {
+  transform: rotate(-12deg) scale(1.06);
+}
+/* =========================================================
+   THEME TRANSITION
+========================================================= */
+
+.topbar-theme-toggle.is-changing .orbit-particle {
+  animation: mahoorOrbitMove 0.8s var(--ease-soft-return);
+}
+
+@keyframes mahoorOrbitMove {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.topbar-menu-toggle {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.topbar-menu-toggle span {
+  display: block;
+
+  width: 21px;
+  height: 1px;
+
+  background: var(--topbar-text-strong);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.55s var(--ease-soft-return),
+    width 0.45s ease,
+    opacity 0.35s ease;
+}
+
+.topbar-menu-toggle span:last-child {
+  width: 14px;
+}
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.topbar-mobile-menu {
+
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  min-height: 430px;
+  padding: 50px 38px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(200, 169, 126, 0.16);
+  background: rgba(18, 15, 13, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-14px);
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease,
+    transform 0.6s var(--ease-soft-return);
+}
+
+/* subtle corner line */
+
+.topbar-mobile-menu::before {
+
+  content: "";
+  position: absolute;
+  top: -1px;
+  right: 12%;
+  width: 80px;
+  height: 1px;
+  background: var(--topbar-accent);
+  opacity: 0.55;
+}
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+.topbar-mobile-nav {
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.topbar-mobile-nav a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 65px;
+  border-bottom: 1px solid var(--topbar-line-soft);
+  color: var(--topbar-text);
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+  transition:
+    color 0.4s ease,
+    padding-right 0.5s var(--ease-soft-return);
+}
+
+.topbar-mobile-nav a:first-child {
+  border-top: 1px solid var(--topbar-line-soft);
+}
+
+.topbar-mobile-nav a:hover {
+  padding-right: 10px;
+
+  color: var(--topbar-text-strong);
+}
+
+.mobile-link-number {
+  color: var(--topbar-accent);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+
+  opacity: 0.7;
+}
+
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+.topbar-mobile-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 24px;
+
+  border-top: 1px solid var(--topbar-line-soft);
+
+  color: var(--topbar-muted);
+
+  font-family: Arial, sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 3px;
+}
+
+/* =========================================================
+   SCROLLED STATE
+========================================================= */
+
+.mahoor-topbar.is-scrolled {
+  position: fixed;
+  top: 12px;
+  width: min(92%, 1280px);
+}
+
+.mahoor-topbar.is-scrolled .topbar-inner {
+
+  min-height: 58px;
+  padding: 0 20px;
+  border: 1px solid rgba(200, 169, 126, 0.16);
+  border-radius: 14px;
+  background: rgba(18, 15, 13, 0.7);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
+}
+
+.mahoor-topbar.is-scrolled .topbar-link {
+  height: 58px;
+}
+
+.mahoor-topbar.is-scrolled .topbar-link::after {
+  bottom: 12px;
+}
+
+.mahoor-topbar.is-scrolled .topbar-link.is-active::before {
+  top: 11px;
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.topbar-action:focus-visible,
+.topbar-link:focus-visible,
+.topbar-menu-toggle:focus-visible,
+.topbar-search-close:focus-visible {
+  outline: 1px solid rgba(200, 169, 126, 0.65);
+
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+  .mahoor-topbar {
+    width: 94%;
+  }
+
+  .topbar-inner {
+    padding: 0 18px;
+
+    gap: 24px;
+  }
+
+  .topbar-nav {
+    gap: 22px;
+  }
+
+  .topbar-link {
+    font-size: 11px;
+  }
+
+  .topbar-actions {
+    gap: 2px;
+  }
+
+  .topbar-logo {
+    min-width: 96px;
+  }
+
+  .topbar-logo__name {
+    font-size: 16px;
+
+    letter-spacing: 6px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+  .topbar-mobile-menu {
+    min-height: 390px;
+  }
+
+  .topbar-mobile-nav a {
+    min-height: 60px;
+
+    font-size: 15px;
+  }
+}
