@@ -1,9 +1,4 @@
 
-/* =========================================================
-   01. DESIGN TOKENS — LIGHT PALETTE
-   (overrides the :root tokens defined in style 2.css)
-   ========================================================= */
-
 :root[data-theme="light"] {
   color-scheme: light;
 
@@ -366,8 +361,7 @@
   color: rgba(34, 29, 23, 0.5);
 }
 
-/* Card imagery keeps its own dark overlay for legibility over photos —
-   intentionally left as-is. */
+
 
 /* =========================================================
    06. ABOUT — hardcoded literals
@@ -449,18 +443,17 @@
 }
 
 :root[data-theme="light"] .product {
-  /* color: #221d17; */
-  /* box-shadow: 20px 20px 60px 6px rgba(0, 0, 0, .35), -20px -20px 60px #ffffff; */
+  
+  background: var(--color-surface);
   box-shadow: 20px 20px 60px 6px rgba(0, 0, 0, .35), 1px -5px 0px #ffffff;
   border: 1px solid rgba(36, 33, 28, 0.07);
   border-radius: 32px;
   padding: 4%;
   transition: transform 0.6s var(--ease-luxury, ease-in-out);
 }
+
 :root[data-theme="light"] .product:hover {
   transform: translateY(-7px);
-  
-
   box-shadow:
     0 24px 55px rgba(80, 64, 40, 0.12);
 }

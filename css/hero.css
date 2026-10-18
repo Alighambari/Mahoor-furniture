@@ -861,7 +861,7 @@
       width: 100%;
     }
     .hero__container {
-      min-width: 100%;
+      min-width: 0;
       height: 100%;
     }
     .hero__content {
@@ -871,6 +871,7 @@
       inset-inline-end: var(--hero-gutter);
     }
     .hero__progress {
+      inset-inline-start: auto;
       inset-inline-end: var(--hero-gutter);
     }
   }
@@ -884,6 +885,8 @@
       height: 100svh;
       max-height: none;
       min-height: 600px;
+      width: 100%;
+
     }
     .hero__image {
       object-position: center center;
@@ -899,6 +902,7 @@
     .hero__content {
       width: 100%;
       padding-top: 6rem;
+      height: 88%;
     }
 
     .hero__brand {
@@ -918,7 +922,7 @@
     }
 
     .hero__title-accent {
-      font-size: 1.06em;
+      margin-top: 24px;
     }
 
     .hero__description {
@@ -938,15 +942,29 @@
     }
 
     .hero__control {
-      width: 42px;
+      width: 34px;
       height: 42px;
     }
 
-    .hero__progress {
-      inset-inline-end: var(--space-5);
-      bottom: calc(5.5rem - 1.75rem);
-      width: auto;
+    .hero__control-icon {
+        width: 30px;
+        height: 30px;
+
+
     }
+    .hero__progress {
+    position: absolute;
+    inset-inline-start: max(
+      var(--hero-gutter),
+      calc((100vw - var(--hero-max)) / 2)
+    );
+    bottom: calc(6.5rem - 2rem);
+    display: flex;
+    gap: var(--space-2);
+    /* direction: ltr; */
+    z-index: 4;
+    pointer-events: none;
+  }
 
     .hero__progress-line {
       width: 26px;
@@ -1007,9 +1025,9 @@
     }
 
     .hero__progress {
-      inset-inline-end: var(--space-4);
+      /* inset-inline-end: var(--space-4);
       bottom: calc(4.75rem - 1.5rem);
-      width: auto;
+      width: auto; */
     }
   }
 

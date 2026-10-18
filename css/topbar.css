@@ -628,8 +628,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid rgba(200, 169, 126, 0.16);
-  background: rgba(18, 15, 13, 0.88);
+  /* border: 1px solid rgba(200, 169, 126, 0.16); */
+  background: var(--color-surface-elevated);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
@@ -729,6 +729,25 @@
 
   letter-spacing: 3px;
 }
+
+.mahoor-topbar.is-menu-open .topbar-mobile-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mahoor-topbar.is-menu-open .topbar-menu-toggle span:first-child {
+  transform: translateY(3.5px) rotate(45deg);
+}
+
+.mahoor-topbar.is-menu-open .topbar-menu-toggle span:last-child {
+  width: 21px;
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+
+
 
 /* =========================================================
    SCROLLED STATE

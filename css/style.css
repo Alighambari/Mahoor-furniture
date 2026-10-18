@@ -126,7 +126,7 @@ body {
   width: 100%;
   min-height: 100vh;
   margin: 0;
-
+  max-width: 100%;
   overflow-x: hidden;
 
 
@@ -155,9 +155,10 @@ svg {
   max-width: 100%;
 }
 
-img {
+/* img:not(.hero__image):not(.hero__slide img) {
   height: auto;
-}
+} */
+
 
 button,
 input,
@@ -440,12 +441,10 @@ img {
   /* ---------- Footer ---------- */
 
   .mahoor-footer-main {
+
     width: 88%;
-
     padding: 50px 0 35px;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 38px 25px;
   }
 

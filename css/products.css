@@ -441,7 +441,7 @@
 
 .products-editorial {
   display: grid;
-
+  overflow: hidden;
   grid-template-columns: repeat(12, minmax(0, 1fr));
 
   column-gap: 28px;

@@ -3,15 +3,18 @@
 
 
 
-
+const mahoorMobileMenu = document.querySelector(".topbar-mobile-menu");
+const mahoorMenuToggle = document.querySelector(".topbar-menu-toggle");
+const mahoorMobileLinks = document.querySelectorAll(".topbar-mobile-nav a");
 
 const topbar = document.getElementById("mahoorTopbar");
-const mahoorMenuToggle = document.querySelector("#mahoorMenuToggle");
-
 const searchButton = document.querySelector(".topbar-search");
 const searchInput = document.getElementById("topbarSearchInput");
 const searchClose = document.querySelector(".topbar-search-close");
 
+
+
+  // for search
 function openSearch() {
   if (!topbar) return;
 
@@ -60,32 +63,10 @@ document.addEventListener("click", (event) => {
   }
 });
 
-const mahoorMobileLinks =
-  document.querySelectorAll(".topbar-mobile-nav a");
 
-function toggleMahoorMenu() {
-  const isOpen = mahoorTopbar.classList.toggle("is-menu-open");
 
-  mahoorMenuToggle.setAttribute("aria-expanded", isOpen);
-
-  mahoorMenuToggle.innerHTML = isOpen
-    ? '<i class="ri-close-line"></i>'
-    : '<i class="ri-menu-3-line"></i>';
-}
-
-function closeMahoorMenu() {
-  mahoorTopbar.classList.remove("is-menu-open");
-
-  mahoorMenuToggle.setAttribute("aria-expanded", "false");
-
-  mahoorMenuToggle.innerHTML =
-    '<i class="ri-menu-3-line"></i>';
-}
-
-mahoorMenuToggle.addEventListener(
-  "click",
-  toggleMahoorMenu
-);
+// mobile-menu
+mahoorMenuToggle.addEventListener("click",toggleMahoorMenu);
 
 mahoorMobileLinks.forEach((link) => {
   link.addEventListener("click", closeMahoorMenu);
@@ -110,3 +91,37 @@ window.addEventListener(
 );
 
 updateTopbarScrollState();
+
+function toggleMahoorMenu() {
+  if (!topbar || !mahoorMenuToggle || !mahoorMobileMenu) {
+    return;
+  }
+
+  const isOpen = topbar.classList.toggle("is-menu-open");
+
+  mahoorMenuToggle.setAttribute("aria-expanded", String(isOpen));
+  mahoorMobileMenu.setAttribute("aria-hidden", String(!isOpen));
+}
+
+function closeMahoorMenu() {
+  if (!topbar || !mahoorMenuToggle || !mahoorMobileMenu) {
+    return;
+  }
+
+  topbar.classList.remove("is-menu-open");
+
+  mahoorMenuToggle.setAttribute("aria-expanded", "false");
+  mahoorMobileMenu.setAttribute("aria-hidden", "true");
+}
+
+mahoorMenuToggle?.addEventListener("click", toggleMahoorMenu);
+
+mahoorMobileLinks.forEach((link) => {
+  link.addEventListener("click", closeMahoorMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeMahoorMenu();
+  }
+});
